@@ -41,6 +41,7 @@ body {
   color: var(--ink);
   background: var(--paper);
   line-height: 1.5;
+  letter-spacing: -0.015em;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -244,6 +245,26 @@ img, video { max-width: 100%; display: block; }
 
 main { padding-top: 5rem; }
 
+/* ---------- about ---------- */
+
+.about {
+  padding: 3rem var(--edge) 4rem;
+  max-width: 62rem;
+  margin: 0 auto;
+}
+
+.about__body {
+  max-width: 42rem;
+}
+
+.about__body p {
+  margin: 0 0 1.1rem;
+  color: var(--ink);
+}
+
+.about__body p:last-child { margin-bottom: 0; }
+
+
 /* ---------- project blocks ---------- */
 
 .project {
@@ -257,10 +278,8 @@ main { padding-top: 5rem; }
 
 .project__meta {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem 2rem;
+  flex-direction: column;
+  gap: 0.4rem;
   margin-bottom: 1.75rem;
 }
 
@@ -271,26 +290,15 @@ main { padding-top: 5rem; }
   letter-spacing: -0.01em;
 }
 
-.project__meta dl {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 0.15rem 1.25rem;
+.project__meta-line {
   margin: 0;
   font-family: var(--mono);
   font-size: 0.78rem;
-}
-
-.project__meta dl div { display: contents; }
-
-.project__meta dt {
   color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
 }
 
-.project__meta dd {
-  margin: 0;
-}
+.project__meta-line span { margin: 0 0.5em; color: var(--line); }
 
 .project__media {
   margin: 0 0 1rem;
@@ -402,5 +410,5 @@ footer a:hover { color: var(--blueprint); border-color: var(--blueprint); }
 
 @media (max-width: 640px) {
   .site-header__nav { gap: 1rem; font-size: 0.75rem; }
-  .project__meta { flex-direction: column; align-items: flex-start; }
+  .project__meta-line { font-size: 0.72rem; }
 }
