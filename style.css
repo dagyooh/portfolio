@@ -345,7 +345,16 @@ img, video { max-width: 100%; display: block; }
   font-size: 0.78rem;
   color: var(--muted);
 }
-
+/* Custom height & scrolling for embedded Jupyter Notebook */
+.notebook-embed {
+  max-height: 400px; /* Adjust height here (e.g. 350px - 500px) */
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #fafafa;
+}
 .notebook-embed {
   margin-top: 2rem;
   padding: 1.25rem;
