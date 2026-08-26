@@ -1,169 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dagyo Oh</title>
-  <link rel="stylesheet" href="style.css?v=9">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dagyo Oh — Portfolio</title>
+  <meta name="description" content="Dagyo Oh — Engineering Student at UC Santa Barbara. Interactive installations, physical computing, and generative media.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ipynb2html@0.4.0-rc.1/dist/notebook.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.3/build/styles/default.min.css" crossorigin="anonymous">
 </head>
 <body>
 
-  <!-- Registration Marks -->
   <div class="reg-marks" aria-hidden="true">
-    <div class="reg tl"><span class="reg-label">DAGYO OH</span></div>
-    <div class="reg tr"><span class="reg-label">PORTFOLIO</span></div>
-    <div class="reg bl"><span class="reg-label">INDEX</span></div>
-    <div class="reg br"><span class="reg-label">2026</span></div>
+    <span class="reg tl"></span><span class="reg-label" style="top:1.25rem;left:1.25rem;">A</span>
+    <span class="reg tr"></span><span class="reg-label" style="top:1.25rem;right:1.25rem;">4</span>
+    <span class="reg bl"></span><span class="reg-label" style="bottom:1.25rem;left:1.25rem;">B</span>
+    <span class="reg br"></span><span class="reg-label" style="bottom:1.25rem;right:1.25rem;">1</span>
   </div>
 
   <header class="site-header">
-    <a href="#" class="site-header__name">Dagyo&nbsp;Oh</a>
+    <a href="#top" class="site-header__name">Dagyo&nbsp;Oh</a>
     <nav class="site-header__nav">
-      <a href="about.html">02 — About</a>
+      <a href="#projects">01 — Projects</a>
+      <a href="#about">02 — About</a>
     </nav>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <p class="hero__eyebrow">Portfolio</p>
-      <h1 class="hero__name">Dagyo Oh</h1>
-      <p class="hero__statement">Design & Engineering</p>
-      <div class="hero__cta">
-        <a href="#projects" class="btn-projects">
-          <span>View Projects</span>
-          <span class="btn-projects__num">↓</span>
-        </a>
+  <section id="top" class="hero">
+    <p class="hero__eyebrow">Engineering Student at UC Santa Barbara</p>
+
+    <h1 class="hero__name">Dagyo Oh</h1>
+
+    <p class="hero__statement">
+      Engineering & Design
+    </p>
+
+    <div class="hero__cta">
+      <a href="#projects" class="btn-projects">
+        <span class="btn-projects__num">01</span>
+        <span class="btn-projects__label">Projects</span>
+      </a>
+      <a href="#about" class="btn-projects">
+        <span class="btn-projects__num">02</span>
+        <span class="btn-projects__label">About</span>
+      </a>
+    </div>
+  </section>
+
+  <main id="projects">
+    <div class="section-heading">
+      <span class="section-heading__num">01</span>
+      <h2>Selected Work</h2>
+    </div>
+
+    <!-- ---------------- PROJECT 1 ---------------- -->
+    <section class="project" id="enceladus">
+      <div class="project__meta">
+        <h3>Enceladus Simulation</h3>
+        <p class="project__meta-line">Digital, Projection <span>|</span> 2026 <span>|</span> Group <span>|</span> MAT 111FS — Nefeli Manoudaki</p>
+      </div>
+
+      <div class="project__intro">
+        <p>
+          A projection of the lunar surface of Saturn's moon, Enceladus, that a viewer explores
+          by moving their hand over a sensor — surrounded by 3D-printed ice structures.
+        </p>
+      </div>
+
+      <figure class="project__media">
+        <video src="media/oh_enceladus_04.mp4" controls muted loop playsinline></video>
+        <figcaption>Video demonstration</figcaption>
+      </figure>
+
+      <div class="project__gallery">
+        <figure>
+          <img src="media/oh_enceladus_05.jpg" alt="The projected Enceladus surface wrapping two walls of the installation, with the ice-structure pedestal in the foreground.">
+          <figcaption>Installation view</figcaption>
+        </figure>
+        <figure>
+          <img src="media/oh_enceladus_06.JPG" alt="The hand sensor surrounded by the 3D-printed ice structures.">
+          <figcaption>Sensor + 3D-printed ice structures</figcaption>
+        </figure>
+      </div>
+
+      <div class="project__body">
+        <p>
+          It is an immersive experience that allows a viewer to interact with it by controlling
+          movement across a preset path across the lunar surface. The movement is controlled via
+          hand movement across a sensor. The projection surrounds the viewer along two walls,
+          giving it a grand scale. Additional 3D-printed ice structures provided decor around the
+          hand sensor.
+        </p>
+        <p>
+          We used a live projection via TouchDesigner. Motion was detected by a Leap Motion
+          Controller by putting one's hands above the sensor and moving left or right. Preset
+          locations were set through TouchDesigner's camera viewport, and the sequence of
+          presets triggered when movement was detected. The landscape itself was created in Blender.
+        </p>
+        <p>
+          This was a group project done with four other people: Bruno Klena, Rose Li, Taj Draper,
+          and Ajoonee Sidhu. I 3D printed the ice structures, and worked on integrating the
+          sensor data to the landscape in TouchDesigner with Rose Li.
+        </p>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <div id="projects">
-      <div class="section-heading">
-        <span class="section-heading__num">01</span>
-        <h2>Selected Projects</h2>
+    <!-- ---------------- PROJECT 2 ---------------- -->
+    <section class="project" id="lofi">
+      <div class="project__meta">
+        <h3>Python Lofi</h3>
+        <p class="project__meta-line">Digital Audio <span>|</span> 2026 <span>|</span> Independent <span>|</span> MAT 111MC — Ryan Millett</p>
       </div>
 
-      <!-- Project 1: Enceladus Simulation -->
-      <article class="project">
-        <div class="project__meta">
-          <h3>Enceladus Simulation</h3>
-          <p class="project__meta-line">
-            2026 <span>/</span> Interactive Installation & Hardware <span>/</span> Design & Engineering
-          </p>
-        </div>
+      <div class="project__intro">
+        <p>
+          A ~1-minute lofi-style track written entirely in Python, using rhythm and tone
+          structures from class rather than a DAW.
+        </p>
+      </div>
 
-        <figure class="project__media">
-          <video controls autoplay loop muted playsinline>
-            <source src="media/oh_enceladus_04.mp4" type="video/mp4">
-          </video>
-          <figcaption>Figure 1.0 — Interactive surface traversal video overview.</figcaption>
+      <div class="project__body">
+        <p>
+          The musical techniques were inspired by concepts learned in MAT 111MC, such as rhythm
+          trees and tone lattices. The Claude desktop app was used to aid in creating usable
+          functions and debugging code.
+        </p>
+      </div>
+
+      <div id="lofi-notebook" class="notebook-embed">
+        <p class="notebook-embed__status">Loading notebook…</p>
+      </div>
+      <p class="notebook-download">
+        <a href="media/oh_lofi_01.ipynb" download>Download oh_lofi_01.ipynb</a>
+      </p>
+    </section>
+
+    <!-- ---------------- PROJECT 3 ---------------- -->
+    <section class="project" id="timer">
+      <div class="project__meta">
+        <h3>Turtle Timer</h3>
+        <p class="project__meta-line">Physical Hardware <span>|</span> 2025 <span>|</span> Independent <span>|</span> ME 10 — Geoff Tsai</p>
+      </div>
+
+      <div class="project__intro">
+        <p>
+          A timer system that automatically shuts off my turtles' heat lamp after 3, 4, or 6
+          hours, so no one in my family has to remember to do it.
+        </p>
+      </div>
+
+      <figure class="project__media">
+        <video src="media/oh_timer_05.mp4" controls muted loop playsinline></video>
+        <figcaption>Video demonstration of timer</figcaption>
+      </figure>
+
+      <div class="project__gallery">
+        <figure>
+          <img src="media/oh_timer_02.jpg" alt="The breadboard prototype with Arduino Nano, pushbuttons, and servo mounted on the wall.">
+          <figcaption>Project setup</figcaption>
         </figure>
-
-        <div class="project__gallery">
-          <figure>
-            <img src="media/oh_enceladus_05.jpg" alt="Enceladus 3D Printed Ice Structures">
-            <figcaption>Figure 1.1 — 3D-printed ice structures and sensor housing layout.</figcaption>
-          </figure>
-          <figure>
-            <img src="media/oh_enceladus_06.JPG" alt="Enceladus Projection Surface">
-            <figcaption>Figure 1.2 — Physical terrain mapping and surface projection test.</figcaption>
-          </figure>
-        </div>
-
-        <div class="project__intro">
-          <p>An immersive installation where a viewer explores a projected lunar surface of Saturn's moon Enceladus by moving their hand over a sensor array surrounded by 3D-printed ice structures.</p>
-        </div>
-
-        <div class="project__body">
-          <p>The system integrates real-time physical interaction with digital terrain rendering. By sampling spatial position through hand movement over the physical sculpture, users directly manipulate the trajectory and focus of the surface simulation.</p>
-        </div>
-
-        <div class="project__note">
-          <p>Documentation and technical details: Refer to <code>oh_enceladus_README.txt</code> in the repository root for system configuration details.</p>
-        </div>
-      </article>
-
-      <!-- Project 2: Turtle Timer -->
-      <article class="project">
-        <div class="project__meta">
-          <h3>Turtle Timer</h3>
-          <p class="project__meta-line">
-            2025 <span>/</span> Physical Computing & Hardware <span>/</span> Hardware Systems
-          </p>
-        </div>
-
-        <figure class="project__media">
-          <video controls autoplay loop muted playsinline>
-            <source src="media/oh_timer_05.mp4" type="video/mp4">
-          </video>
-          <figcaption>Figure 2.0 — Hardware interface and automatic shutoff cycle demo.</figcaption>
+        <figure>
+          <img src="media/oh_timer_03.jpg" alt="The custom 3D-printed yellow enclosure bracket for the timer.">
+          <figcaption>Custom 3D-printed part</figcaption>
         </figure>
+      </div>
 
-        <div class="project__gallery">
-          <figure>
-            <img src="media/oh_timer_02.jpg" alt="Turtle Timer Circuit Detail">
-            <figcaption>Figure 2.1 — Circuit layout, relay component integration, and safety isolation.</figcaption>
-          </figure>
-          <figure>
-            <img src="media/oh_timer_03.jpg" alt="Turtle Timer Enclosure">
-            <figcaption>Figure 2.2 — Enclosure assembly and switch interface configuration.</figcaption>
-          </figure>
-        </div>
+      <div class="project__body">
+        <p>
+          I decided to build a timer since turning off the lamp had always been a hassle for my
+          family members — it was the most frequent chore in taking care of the turtles. The
+          project has four pushbuttons with time settings of 3, 4, and 6 hours, and a reset button.
+        </p>
+        <p>
+          When the timer finishes, a servo motor activates and turns off the lamp switch. The
+          timer was built with an Arduino Nano, pushbuttons, wires, LEGOs, and a custom
+          3D-printed part.
+        </p>
+        <p class="project__note">
+          Note: the original CAD file for the custom part was lost during the project — the
+          enclosure was rebuilt from sketches (see brainstorm PDF).
+        </p>
+      </div>
+    </section>
 
-        <div class="project__intro">
-          <p>A physical hardware device designed to automatically shut off a heat lamp for turtles after 3, 4, or 6 hours to assist with pet care.</p>
-        </div>
-
-        <div class="project__body">
-          <p>Designed to simplify daily habitat care, the device combines dedicated physical switches with a safety-isolated power circuit. It ensures reliable, timed power control for lighting and thermal elements without requiring connected software setups.</p>
-        </div>
-
-        <div class="notebook-embed">
-          <p class="notebook-embed__status">System design notes & specifications loaded from project documentation.</p>
-          <span class="notebook-download">
-            <a href="oh_enceladus_README.txt" target="_blank">Download / View README.txt →</a>
-          </span>
-        </div>
-      </article>
-
-      <!-- Project 3: Python Lofi -->
-      <article class="project">
-        <div class="project__meta">
-          <h3>Python Lofi</h3>
-          <p class="project__meta-line">
-            2025 <span>/</span> Algorithmic Composition <span>/</span> MAT 111MC — Prof. Ryan Millett
-          </p>
-        </div>
-
-        <div class="project__media">
-          <audio controls style="width: 100%; padding: 1.5rem; background: #fff;">
-            <source src="media/oh_lofi_track.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-          <figcaption>Figure 3.0 — 1-minute algorithmic audio track composed in Python.</figcaption>
-        </div>
-
-        <div class="project__intro">
-          <p>A one-minute algorithmic lo-fi audio track generated using custom Python code, constructed using mathematical rhythm trees and tone lattices.</p>
-        </div>
-
-        <div class="project__body">
-          <p>Developed for MAT 111MC under Prof. Ryan Millett, this computational audio generator maps structural rhythm trees into dynamic temporal beats while navigating harmonic paths through geometric tone lattices to generate warm, evolving lo-fi soundscapes completely programmatically.</p>
-        </div>
-
-        <div class="project__note">
-          <p>Class & Project Context: MAT 111MC (Prof. Ryan Millett). Built and debugged utilizing generative scripting workflows to compute harmonic intervals and tree structures.</p>
-        </div>
-      </article>
-
-    </div>
   </main>
 
+  <section id="about" class="about">
+    <div class="section-heading">
+      <span class="section-heading__num">02</span>
+      <h2>About</h2>
+    </div>
+
+    <div class="about__body">
+      <p>
+        I'm an engineering student at UC Santa Barbara interested in the places where hardware,
+        software, and physical materials meet — sensors that read a room, small circuits with a
+        single job, structures built to hold up a projection. Most of what's here started as a
+        class project and turned into something I kept tinkering with after the deadline passed.
+      </p>
+      <p>
+        Outside of coursework, I like building things with my hands as much as writing code for
+        them — 3D printing, breadboarding, and the occasional turtle-related engineering problem.
+      </p>
+
+      <div class="about__contact">
+        <p><strong>Contact:</strong> Dagyo Oh — <a href="mailto:dagyooh@ucsb.edu">dagyooh@ucsb.edu</a></p>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <span>Dagyo Oh</span>
-    <span>© 2026</span>
+    <p>Dagyo Oh — UC Santa Barbara — 2026</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/ipynb2html@0.4.0-rc.1/dist/ipynb2html-full.min.js" crossorigin="anonymous"></script>
+  <script>
+    (function () {
+      var target = document.getElementById('lofi-notebook');
+
+      fetch('media/oh_lofi_01.ipynb')
+        .then(function (res) {
+          if (!res.ok) throw new Error('not found');
+          return res.json();
+        })
+        .then(function (notebook) {
+          target.innerHTML = '';
+          target.appendChild(ipynb2html.render(notebook));
+        })
+        .catch(function () {
+          target.innerHTML =
+            '<p class="notebook-embed__status">' +
+            'Notebook preview needs this site to be served over http(s) rather than opened ' +
+            'directly as a file — it will render once hosted (e.g. GitHub Pages) or run from a ' +
+            'local server. Until then, use the download link below.' +
+            '</p>';
+        });
+    })();
+  </script>
 
 </body>
 </html>
