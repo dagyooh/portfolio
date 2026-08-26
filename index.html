@@ -75,14 +75,9 @@
     <!-- EDIT: your bio — one <p> per paragraph -->
     <div class="about__body">
       <p>
-        I'm an engineering student at UC Santa Barbara interested in the places where hardware,
-        software, and physical materials meet — sensors that read a room, small circuits with a
-        single job, structures built to hold up a projection. Most of what's here started as a
-        class project and turned into something I kept tinkering with after the deadline passed.
+        Dagyo Oh is a student at UC Santa Barbara majoring in Mechanical Engineering and minoring in Music and Media Arts and Design.
       </p>
       <p>
-        Outside of coursework, I like building things with my hands as much as writing code for
-        them — 3D printing, breadboarding, and the occasional turtle-related engineering problem.
       </p>
     </div>
   </section>
@@ -154,4 +149,119 @@
     <!-- ---------------- PROJECT 2 ---------------- -->
     <section class="project" id="lofi">
       <div class="project__meta">
-        <!-- EDIT:
+        <!-- EDIT: project title -->
+        <h3>Python Lofi</h3>
+        <!-- EDIT: medium | date | type | course -->
+        <p class="project__meta-line">Digital Audio <span>|</span> 2026 <span>|</span> Independent <span>|</span> MAT 111MC — Ryan Millett</p>
+      </div>
+
+      <!-- EDIT: project description -->
+      <div class="project__body">
+        <p>
+          A ~1-minute lofi-style track made with code. The language used was Python, and the
+          musical techniques were inspired by concepts learned in MAT 111MC, such as rhythm
+          trees and tone lattices. The Claude desktop app was used to aid in creating usable
+          functions and debugging code.
+        </p>
+      </div>
+
+      <!-- Notebook is rendered client-side from the raw .ipynb — no
+           pre-conversion step needed, powered by ipynb2html (loaded in <head>).
+           Nothing here to edit unless you rename the .ipynb file. -->
+      <div id="lofi-notebook" class="notebook-embed">
+        <p class="notebook-embed__status">Loading notebook…</p>
+      </div>
+      <p class="notebook-download">
+        <a href="media/oh_lofi_01.ipynb" download>Download oh_lofi_01.ipynb</a>
+      </p>
+    </section>
+
+    <!-- ---------------- PROJECT 3 ---------------- -->
+    <section class="project" id="timer">
+      <div class="project__meta">
+        <!-- EDIT: project title -->
+        <h3>Turtle Timer</h3>
+        <!-- EDIT: medium | date | type | course -->
+        <p class="project__meta-line">Physical Hardware <span>|</span> 2025 <span>|</span> Independent <span>|</span> ME 10 — Geoff Tsai</p>
+      </div>
+
+      <figure class="project__media">
+        <video src="media/oh_timer_05.MOV" controls muted loop playsinline></video>
+        <!-- EDIT: caption -->
+        <figcaption>Video demonstration of timer</figcaption>
+      </figure>
+
+      <div class="project__gallery">
+        <figure>
+          <img src="media/oh_timer_02.jpg" alt="The breadboard prototype with Arduino Nano, pushbuttons, and servo mounted on the wall.">
+          <!-- EDIT: caption -->
+          <figcaption>Project setup</figcaption>
+        </figure>
+        <figure>
+          <img src="media/oh_timer_03.jpg" alt="The custom 3D-printed yellow enclosure bracket for the timer.">
+          <!-- EDIT: caption -->
+          <figcaption>Custom 3D-printed part</figcaption>
+        </figure>
+      </div>
+
+      <!-- EDIT: project description -->
+      <div class="project__body">
+        <p>
+          This project was a timer system built to help my turtles and my family by
+          automatically turning off the turtles' heat lamp after a certain amount of time.
+          I decided to build a timer since turning off the lamp had always been a hassle for my
+          family members — it was the most frequent chore in taking care of the turtles.
+        </p>
+        <p>
+          The project has four pushbuttons with time settings of 3, 4, and 6 hours, and a reset
+          button. When the timer finishes, a servo motor activates and turns off the lamp
+          switch. The timer was built with an Arduino Nano, pushbuttons, wires, LEGOs, and a
+          custom 3D-printed part.
+        </p>
+        <p class="project__note">
+          Note: the original CAD file for the custom part was lost during the project — the
+          enclosure was rebuilt from sketches (see brainstorm PDF).
+        </p>
+      </div>
+    </section>
+
+    <!-- ADD YOUR NEXT PROJECT HERE: copy one whole
+         <section class="project" id="..."> ... </section> block
+         from above and edit it. -->
+
+  </main>
+
+  <footer id="contact">
+    <!-- EDIT: name + email -->
+    <p>Dagyo Oh — <a href="mailto:dagyooh@ucsb.edu">dagyooh@ucsb.edu</a></p>
+    <!-- EDIT: school + year -->
+    <p>UC Santa Barbara — 2026</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/ipynb2html@0.4.0-rc.1/dist/ipynb2html-full.min.js" crossorigin="anonymous"></script>
+  <script>
+    (function () {
+      var target = document.getElementById('lofi-notebook');
+
+      fetch('media/oh_lofi_01.ipynb')
+        .then(function (res) {
+          if (!res.ok) throw new Error('not found');
+          return res.json();
+        })
+        .then(function (notebook) {
+          target.innerHTML = '';
+          target.appendChild(ipynb2html.render(notebook));
+        })
+        .catch(function () {
+          target.innerHTML =
+            '<p class="notebook-embed__status">' +
+            'Notebook preview needs this site to be served over http(s) rather than opened ' +
+            'directly as a file — it will render once hosted (e.g. GitHub Pages) or run from a ' +
+            'local server. Until then, use the download link below.' +
+            '</p>';
+        });
+    })();
+  </script>
+
+</body>
+</html>
