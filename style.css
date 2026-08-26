@@ -27,7 +27,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom Black Star Cursor for Default Body */
+/* Larger Black Star Cursor (32x32) */
 body {
   margin: 0;
   font-family: var(--sans);
@@ -37,12 +37,12 @@ body {
   line-height: 1.5;
   letter-spacing: -0.03em;
   -webkit-font-smoothing: antialiased;
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="black"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') 10 10, auto;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="black"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') 16 16, auto;
 }
 
-/* Custom White Star Cursor with Black Border for Interactive Elements */
+/* Larger Hover Cursor: White Star with Black Stroke */
 a, button, .btn-projects, input, textarea, select {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="black" stroke-width="2" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') 10 10, pointer;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white" stroke="black" stroke-width="2" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') 16 16, pointer;
 }
 
 a { color: inherit; }
@@ -93,7 +93,7 @@ img, video { max-width: 100%; display: block; }
   .reg-marks { display: none; }
 }
 
-/* ---------- Sticky Header ---------- */
+/* ---------- Header ---------- */
 
 .site-header {
   position: sticky;
@@ -119,6 +119,7 @@ img, video { max-width: 100%; display: block; }
 
 .site-header__nav {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
 }
 
@@ -129,6 +130,18 @@ img, video { max-width: 100%; display: block; }
 }
 .site-header__nav a:hover,
 .site-header__nav a.active { color: var(--blueprint); }
+
+/* About Close "X" Button */
+.about-close-btn {
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+  text-decoration: none !important;
+  color: var(--ink) !important;
+  line-height: 1;
+}
+.about-close-btn:hover {
+  color: var(--blueprint) !important;
+}
 
 /* ---------- Hero Section ---------- */
 
@@ -178,10 +191,12 @@ img, video { max-width: 100%; display: block; }
   margin-top: 1rem;
 }
 
+/* Larger Star Divider */
 .hero__cta-divider {
-  font-size: 1rem;
+  font-size: 1.6rem;
   color: var(--ink);
   user-select: none;
+  line-height: 1;
 }
 
 .btn-projects {
@@ -210,16 +225,22 @@ img, video { max-width: 100%; display: block; }
 }
 .btn-projects:hover .btn-projects__num { color: inherit; }
 
-/* ---------- Section Headings & Project Blocks ---------- */
+/* ---------- Section Headings & Project Buttons ---------- */
 
 .section-heading {
   max-width: 62rem;
   margin: 0 auto;
-  padding: 2rem var(--edge) 1rem;
+  padding: 2rem var(--edge) 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-heading__title {
   display: flex;
   align-items: baseline;
   gap: 1rem;
-  border-bottom: 1px solid var(--line);
 }
 
 .section-heading__num {
@@ -234,6 +255,33 @@ img, video { max-width: 100%; display: block; }
   font-weight: 300;
   text-transform: uppercase;
 }
+
+/* Quick Jump Buttons Container */
+.project-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.btn-project-jump {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--muted);
+  transition: all 0.15s ease;
+}
+
+.btn-project-jump:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: rgba(19, 19, 17, 0.03);
+}
+
+/* ---------- Projects & Content ---------- */
 
 .project {
   padding: 4rem var(--edge);
@@ -258,8 +306,6 @@ img, video { max-width: 100%; display: block; }
 }
 
 .project__meta-line span { margin: 0 0.4em; color: var(--line); }
-
-/* ---------- Media Containers ---------- */
 
 .project__media {
   margin: 0 0 1.5rem;
@@ -303,8 +349,6 @@ img, video { max-width: 100%; display: block; }
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
-
-/* ---------- Text Content & Jupyter Embed ---------- */
 
 .project__intro p {
   font-size: 1.15rem;
