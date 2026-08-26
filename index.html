@@ -4,9 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dagyo Oh</title>
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
+
+  <!-- Registration Marks -->
+  <div class="reg-marks" aria-hidden="true">
+    <div class="reg tl"><span class="reg-label">DAGYO OH</span></div>
+    <div class="reg tr"><span class="reg-label">PORTFOLIO</span></div>
+    <div class="reg bl"><span class="reg-label">INDEX</span></div>
+    <div class="reg br"><span class="reg-label">2026</span></div>
+  </div>
 
   <header class="site-header">
     <a href="#" class="site-header__name">Dagyo&nbsp;Oh</a>
@@ -30,20 +38,81 @@
       </div>
     </section>
 
-    <!-- Scrollable Projects Container -->
+    <!-- Scrollable Projects Section -->
     <div id="projects">
-      <!-- Project 1 -->
+      <div class="section-heading">
+        <span class="section-heading__num">01</span>
+        <h2>Selected Projects</h2>
+      </div>
+
+      <!-- Project 1: Enceladus Simulation -->
       <article class="project">
         <div class="project__meta">
-          <h3>Oh Enceladus</h3>
-          <p class="project__meta-line">2026 <span>/</span> Linkage Mechanism Analysis</p>
+          <h3>Enceladus Simulation</h3>
+          <p class="project__meta-line">2026 <span>/</span> Immersive Installation & Hardware</p>
         </div>
+
         <div class="project__media">
-          <img src="media/oh_enceladus_05.jpg" alt="Enceladus Design">
+          <video controls autoplay loop muted playsinline>
+            <source src="media/oh_enceladus_04.mp4" type="video/mp4">
+          </video>
+          <figcaption>Figure 1.0 — Sensor-driven surface navigation overview.</figcaption>
+        </div>
+
+        <div class="project__gallery">
+          <figure>
+            <img src="media/oh_enceladus_05.jpg" alt="Enceladus 3D Printed Ice Structures">
+            <figcaption>Figure 1.1 — 3D-printed ice structures and physical housing.</figcaption>
+          </figure>
+          <figure>
+            <img src="media/oh_enceladus_06.JPG" alt="Enceladus Interactive Display">
+            <figcaption>Figure 1.2 — Projection mapping test on simulated lunar terrain.</figcaption>
+          </figure>
+        </div>
+
+        <div class="project__intro">
+          <p>An immersive installation where a viewer explores a projected lunar surface of Saturn's moon Enceladus by moving their hand over a custom sensor array enclosed within 3D-printed ice structures.</p>
+        </div>
+
+        <div class="project__body">
+          <p>The system integrates real-time physical interaction with digital terrain rendering. By sampling spatial position through hand movement over the physical sculpture, users directly manipulate the trajectory and focus of the surface simulation.</p>
         </div>
       </article>
 
-      <!-- Additional Projects follow here below -->
+      <!-- Project 2: Turtle Timer -->
+      <article class="project">
+        <div class="project__meta">
+          <h3>Turtle Timer</h3>
+          <p class="project__meta-line">2025 <span>/</span> Physical Computing & Hardware Design</p>
+        </div>
+
+        <div class="project__media">
+          <video controls autoplay loop muted playsinline>
+            <source src="media/oh_timer_05.mp4" type="video/mp4">
+          </video>
+          <figcaption>Figure 2.0 — Hardware interface and timer cycle demonstration.</figcaption>
+        </div>
+
+        <div class="project__gallery">
+          <figure>
+            <img src="media/oh_timer_02.jpg" alt="Timer Housing Detail">
+            <figcaption>Figure 2.1 — Internal wiring and relay component integration.</figcaption>
+          </figure>
+          <figure>
+            <img src="media/oh_timer_03.jpg" alt="Timer Enclosure Assembly">
+            <figcaption>Figure 2.2 — Enclosure assembly and switch interface.</figcaption>
+          </figure>
+        </div>
+
+        <div class="project__intro">
+          <p>A dedicated physical hardware device built to automatically control power cycles for pet heat lamps across set 3, 4, or 6-hour durations.</p>
+        </div>
+
+        <div class="project__body">
+          <p>Designed to simplify daily habitat care, the device combines dedicated physical switches with a safety-isolated power circuit. It ensures reliable, timed power control for lighting and thermal elements without requiring connected software setups.</p>
+        </div>
+      </article>
+
     </div>
   </main>
 
