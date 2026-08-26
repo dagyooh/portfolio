@@ -1,6 +1,5 @@
 /* ===========================================================
    Dagyo Oh — portfolio
-   Design note: technical drawing and CAD aesthetic
    =========================================================== */
 
 :root {
@@ -27,18 +26,14 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-}
-
+/* Base typography: Everything set to -30 tracking (-0.03em) */
 body {
   margin: 0;
   font-family: var(--sans);
   color: var(--ink);
   background: var(--paper);
   line-height: 1.5;
-  letter-spacing: -0.05em; /* Updated tracking to -50 equivalent */
+  letter-spacing: -0.03em; /* -30 letter spacing */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -80,8 +75,6 @@ img, video { max-width: 100%; display: block; }
 .reg::before { top: 50%; left: 0; width: 100%; height: 1px; }
 .reg::after  { left: 50%; top: 0; height: 100%; width: 1px; }
 
-.reg span { position: relative; }
-
 .reg.tl { top: 1rem; left: 1rem; }
 .reg.tr { top: 1rem; right: 1rem; }
 .reg.bl { bottom: 1rem; left: 1rem; }
@@ -103,7 +96,7 @@ img, video { max-width: 100%; display: block; }
   .reg-marks { display: none; }
 }
 
-/* ---------- header ---------- */
+/* ---------- sticky header ---------- */
 
 .site-header {
   position: sticky;
@@ -119,12 +112,13 @@ img, video { max-width: 100%; display: block; }
   font-family: var(--mono);
   font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: -0.05em;
 }
 
+/* Header Name: All Caps, -50 spacing */
 .site-header__name {
   text-decoration: none;
   font-weight: 700;
+  text-transform: uppercase;
   letter-spacing: -0.05em;
 }
 
@@ -137,26 +131,22 @@ img, video { max-width: 100%; display: block; }
   text-decoration: none;
   color: var(--muted);
   transition: color 0.15s ease;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
-.site-header__nav a:hover { color: var(--blueprint); }
-
-.nav-close {
-  color: var(--ink) !important;
-  font-weight: bold;
-}
+.site-header__nav a:hover,
+.site-header__nav a.active { color: var(--blueprint); }
 
 /* ---------- hero / cover ---------- */
 
 .hero {
-  min-height: 85vh;
+  min-height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   gap: 1.75rem;
-  padding: 6rem var(--edge) 4rem;
+  padding: 4rem var(--edge);
   max-width: 62rem;
   margin: 0 auto;
 }
@@ -165,16 +155,18 @@ img, video { max-width: 100%; display: block; }
   font-family: var(--mono);
   font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
   color: var(--blueprint);
   margin: 0;
 }
 
+/* Hero Name: All Caps, -50 spacing */
 .hero__name {
   margin: 0;
   font-size: clamp(3rem, 11vw, 7rem);
   line-height: 0.95;
   font-weight: 700;
+  text-transform: uppercase;
   letter-spacing: -0.05em;
 }
 
@@ -183,7 +175,7 @@ img, video { max-width: 100%; display: block; }
   font-size: clamp(1.05rem, 2.2vw, 1.35rem);
   color: var(--ink);
   margin: 0;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 .hero__cta {
@@ -207,7 +199,7 @@ img, video { max-width: 100%; display: block; }
   font-family: var(--mono);
   font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
   transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
 }
 
@@ -237,6 +229,7 @@ img, video { max-width: 100%; display: block; }
   font-family: var(--mono);
   color: var(--blueprint);
   font-size: 0.9rem;
+  letter-spacing: -0.03em;
 }
 
 .section-heading h2 {
@@ -244,41 +237,38 @@ img, video { max-width: 100%; display: block; }
   font-size: 1.1rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
   color: var(--muted);
 }
 
-main {
-  padding-top: 3rem;
-  padding-bottom: 4rem;
-}
+main { padding-top: 4rem; }
 
-/* ---------- about page ---------- */
+/* ---------- about section ---------- */
 
 .about {
-  padding: 2rem var(--edge) 4rem;
+  padding: 4rem var(--edge);
   max-width: 62rem;
   margin: 0 auto;
+  min-height: calc(100vh - 10rem);
 }
 
 .about__body {
   max-width: 42rem;
-  font-size: 1.1rem;
 }
 
 .about__body p {
-  margin: 0 0 1.2rem;
+  margin: 0 0 1.1rem;
   color: var(--ink);
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 .about__contact {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--line);
   font-family: var(--mono);
   font-size: 0.9rem;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 .about__contact a {
@@ -293,7 +283,7 @@ main {
 /* ---------- project blocks ---------- */
 
 .project {
-  padding: 3rem var(--edge) 5rem;
+  padding: 4rem var(--edge);
   border-top: 1px solid var(--line);
   max-width: 62rem;
   margin: 0 auto;
@@ -308,10 +298,12 @@ main {
   margin-bottom: 1.75rem;
 }
 
+/* Project Titles: All Caps, -50 spacing */
 .project__meta h3 {
   margin: 0;
   font-size: clamp(1.6rem, 4vw, 2.4rem);
   font-weight: 700;
+  text-transform: uppercase;
   letter-spacing: -0.05em;
 }
 
@@ -320,7 +312,7 @@ main {
   font-family: var(--mono);
   font-size: 0.78rem;
   color: var(--muted);
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 .project__meta-line span { margin: 0 0.5em; color: var(--line); }
@@ -341,7 +333,7 @@ main {
   font-family: var(--mono);
   font-size: 0.75rem;
   color: var(--muted);
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 .project__gallery {
@@ -364,13 +356,13 @@ main {
   font-size: 0.72rem;
   color: var(--muted);
   border-top: 1px solid var(--line);
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 .project__intro {
   max-width: 42rem;
   margin: 0 0 1.75rem;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 .project__intro p {
@@ -380,7 +372,7 @@ main {
 
 .project__body {
   max-width: 42rem;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 .project__body p {
@@ -399,7 +391,7 @@ main {
   font-size: 0.8rem;
   color: var(--muted);
   max-width: 42rem;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 /* ---------- notebook embed ---------- */
@@ -412,7 +404,7 @@ main {
   padding: 1.25rem 1.5rem;
   font-family: var(--mono);
   font-size: 0.85rem;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 .notebook-embed__status {
@@ -428,7 +420,7 @@ main {
   font-family: var(--mono);
   font-size: 0.78rem;
   color: var(--muted);
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 .notebook-download a { color: var(--blueprint); text-decoration: none; }
 .notebook-download a:hover { text-decoration: underline; }
@@ -444,7 +436,7 @@ footer {
   font-family: var(--mono);
   font-size: 0.8rem;
   color: var(--muted);
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 @media (max-width: 640px) {
