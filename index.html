@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dagyo Oh</title>
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -25,7 +25,7 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Hero / Cover Section -->
     <section class="hero">
       <p class="hero__eyebrow">Portfolio</p>
       <h1 class="hero__name">Dagyo Oh</h1>
@@ -38,7 +38,7 @@
       </div>
     </section>
 
-    <!-- Scrollable Projects Section -->
+    <!-- Projects Section -->
     <div id="projects">
       <div class="section-heading">
         <span class="section-heading__num">01</span>
@@ -49,33 +49,37 @@
       <article class="project">
         <div class="project__meta">
           <h3>Enceladus Simulation</h3>
-          <p class="project__meta-line">2026 <span>/</span> Immersive Installation & Hardware</p>
+          <p class="project__meta-line">2026 <span>/</span> Interactive Installation & Hardware Design</p>
         </div>
 
-        <div class="project__media">
+        <figure class="project__media">
           <video controls autoplay loop muted playsinline>
             <source src="media/oh_enceladus_04.mp4" type="video/mp4">
           </video>
-          <figcaption>Figure 1.0 — Sensor-driven surface navigation overview.</figcaption>
-        </div>
+          <figcaption>Figure 1.0 — Interactive surface traversal video overview.</figcaption>
+        </figure>
 
         <div class="project__gallery">
           <figure>
             <img src="media/oh_enceladus_05.jpg" alt="Enceladus 3D Printed Ice Structures">
-            <figcaption>Figure 1.1 — 3D-printed ice structures and physical housing.</figcaption>
+            <figcaption>Figure 1.1 — 3D-printed ice structures and sensor housing layout.</figcaption>
           </figure>
           <figure>
-            <img src="media/oh_enceladus_06.JPG" alt="Enceladus Interactive Display">
-            <figcaption>Figure 1.2 — Projection mapping test on simulated lunar terrain.</figcaption>
+            <img src="media/oh_enceladus_06.JPG" alt="Enceladus Projection Surface">
+            <figcaption>Figure 1.2 — Physical terrain mapping and surface projection test.</figcaption>
           </figure>
         </div>
 
         <div class="project__intro">
-          <p>An immersive installation where a viewer explores a projected lunar surface of Saturn's moon Enceladus by moving their hand over a custom sensor array enclosed within 3D-printed ice structures.</p>
+          <p>An immersive installation where a viewer explores a projected lunar surface of Saturn's moon Enceladus by moving their hand over a sensor array surrounded by 3D-printed ice structures.</p>
         </div>
 
         <div class="project__body">
           <p>The system integrates real-time physical interaction with digital terrain rendering. By sampling spatial position through hand movement over the physical sculpture, users directly manipulate the trajectory and focus of the surface simulation.</p>
+        </div>
+
+        <div class="project__note">
+          <p>Documentation and technical details: Refer to <code>oh_enceladus_README.txt</code> in the repository root for system configuration details.</p>
         </div>
       </article>
 
@@ -83,33 +87,40 @@
       <article class="project">
         <div class="project__meta">
           <h3>Turtle Timer</h3>
-          <p class="project__meta-line">2025 <span>/</span> Physical Computing & Hardware Design</p>
+          <p class="project__meta-line">2025 <span>/</span> Hardware & Power Control Systems</p>
         </div>
 
-        <div class="project__media">
+        <figure class="project__media">
           <video controls autoplay loop muted playsinline>
             <source src="media/oh_timer_05.mp4" type="video/mp4">
           </video>
-          <figcaption>Figure 2.0 — Hardware interface and timer cycle demonstration.</figcaption>
-        </div>
+          <figcaption>Figure 2.0 — Hardware interface and automatic shutoff cycle demo.</figcaption>
+        </figure>
 
         <div class="project__gallery">
           <figure>
-            <img src="media/oh_timer_02.jpg" alt="Timer Housing Detail">
-            <figcaption>Figure 2.1 — Internal wiring and relay component integration.</figcaption>
+            <img src="media/oh_timer_02.jpg" alt="Turtle Timer Circuit Detail">
+            <figcaption>Figure 2.1 — Circuit layout, relay component integration, and safety isolation.</figcaption>
           </figure>
           <figure>
-            <img src="media/oh_timer_03.jpg" alt="Timer Enclosure Assembly">
-            <figcaption>Figure 2.2 — Enclosure assembly and switch interface.</figcaption>
+            <img src="media/oh_timer_03.jpg" alt="Turtle Timer Enclosure">
+            <figcaption>Figure 2.2 — Enclosure assembly and switch interface configuration.</figcaption>
           </figure>
         </div>
 
         <div class="project__intro">
-          <p>A dedicated physical hardware device built to automatically control power cycles for pet heat lamps across set 3, 4, or 6-hour durations.</p>
+          <p>A physical hardware device designed to automatically shut off a heat lamp for turtles after 3, 4, or 6 hours to assist with pet care.</p>
         </div>
 
         <div class="project__body">
           <p>Designed to simplify daily habitat care, the device combines dedicated physical switches with a safety-isolated power circuit. It ensures reliable, timed power control for lighting and thermal elements without requiring connected software setups.</p>
+        </div>
+
+        <div class="notebook-embed">
+          <p class="notebook-embed__status">System design notes & specifications loaded from project documentation.</p>
+          <span class="notebook-download">
+            <a href="oh_enceladus_README.txt" target="_blank">Download / View README.txt →</a>
+          </span>
         </div>
       </article>
 
