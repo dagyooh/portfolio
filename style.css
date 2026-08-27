@@ -142,142 +142,168 @@ img, video { max-width: 100%; display: block; }
   color: var(--blueprint) !important;
 }
 
-/* ---------- Studio Karo Hero Section ---------- */
+/* ---------- Centered Hero Section ---------- */
 
-.hero-karo {
-  max-width: 76rem;
-  margin: 0 auto;
-  padding: 3rem var(--edge) 4rem;
-}
-
-.hero-karo__title-row {
+.hero {
+  min-height: calc(100vh - 4rem);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.hero-karo__first-name,
-.hero-karo__last-name {
-  font-size: clamp(3.5rem, 11vw, 9rem);
-  font-weight: 800;
-  margin: 0;
-  line-height: 0.9;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-}
-
-.hero-karo__tag {
-  font-family: var(--mono);
-  font-size: clamp(0.7rem, 1.2vw, 0.85rem);
-  color: var(--ink);
-  letter-spacing: 0.05em;
+  justify-content: center;
   text-align: center;
-  padding: 0 0.5rem;
+  gap: 1.75rem;
+  padding: 4rem var(--edge);
+  max-width: 68rem;
+  margin: 0 auto;
 }
 
-.hero-karo__subnav {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  margin-bottom: 2.5rem;
+.hero__eyebrow {
   font-family: var(--mono);
-  font-size: 0.95rem;
-  font-weight: 600;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding-bottom: 0.5rem;
-}
-
-.hero-karo__category {
-  text-decoration: none;
-  color: var(--ink);
-  transition: color 0.15s ease;
-}
-
-.hero-karo__category:hover,
-.hero-karo__category.active {
+  font-size: 0.85rem;
+  text-transform: uppercase;
   color: var(--blueprint);
+  margin: 0;
 }
 
-/* ---------- Karo-Style Star Card Grid ---------- */
-
-.karo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+.hero__name {
+  margin: 0;
+  font-size: clamp(3rem, 11vw, 7rem);
+  line-height: 0.95;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: -0.10em;
 }
 
-@media (max-width: 860px) {
-  .hero-karo__title-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .hero-karo__tag {
-    text-align: left;
-    padding: 0.5rem 0;
-  }
-  .karo-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.karo-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid var(--line);
-  background: #ffffff;
-  padding: 1.25rem;
-  text-decoration: none;
+.hero__statement {
+  max-width: 38rem;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 300;
   color: var(--ink);
-  min-height: 320px;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  margin: 0;
 }
 
-.karo-card:hover {
-  border-color: var(--ink);
-  transform: translateY(-2px);
-}
+/* CTA Pill Buttons with Central Star */
 
-.karo-card__info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.karo-card__title {
-  font-weight: 600;
-  font-size: 1.05rem;
-}
-
-.karo-card__meta {
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-.karo-card__preview {
+.hero__cta {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.hero__cta-divider {
+  font-size: 1.6rem;
+  color: var(--ink);
+  user-select: none;
+  line-height: 1;
+}
+
+.btn-projects {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.4rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.btn-projects:hover {
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateY(-1px);
+}
+
+.btn-projects__num {
+  color: var(--blueprint);
+}
+.btn-projects:hover .btn-projects__num { color: inherit; }
+
+/* ---------- Embedded Selected Work & Star Navigation (No Cards) ---------- */
+
+.hero__selected-work {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
   width: 100%;
 }
 
-.karo-card__svg {
-  width: 120px;
-  height: 120px;
-  fill: var(--ink);
-  transition: fill 0.2s ease, transform 0.2s ease;
+.hero__selected-work .section-heading__title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
 }
 
-.karo-card:hover .karo-card__svg {
+.hero__selected-work h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.hero__selected-work .section-heading__num {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--blueprint);
+}
+
+/* Star Navigation Container */
+
+.star-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.star-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 0.25s ease;
+}
+
+.star-item:hover {
+  transform: translateY(-3px);
+}
+
+.star-item__svg {
+  width: 64px;
+  height: 64px;
+  fill: var(--ink);
+  transition: fill 0.25s ease, transform 0.25s ease;
+}
+
+.star-item:hover .star-item__svg {
   fill: var(--blueprint);
-  transform: scale(1.08);
+  transform: scale(1.1);
+}
+
+.star-item__label {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  transition: color 0.25s ease;
+}
+
+.star-item:hover .star-item__label {
+  color: var(--ink);
 }
 
 /* ---------- Projects Detail Section ---------- */
