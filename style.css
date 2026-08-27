@@ -502,3 +502,80 @@ footer {
   max-width: 62rem;
   margin: 0 auto;
 }
+/* ---------- 3D Spinning Stars Hover Effects ---------- */
+
+.star-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.star-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--ink);
+  transform-style: preserve-3d;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hovering scales the star container and lifts it forward */
+.star-item:hover {
+  transform: scale(1.2) translateZ(20px);
+}
+
+.star-item__svg {
+  width: 64px;
+  height: 64px;
+  fill: var(--ink);
+  animation: spin3D 6s linear infinite;
+  transform-style: preserve-3d;
+  transition: fill 0.25s ease, filter 0.25s ease;
+}
+
+/* Interactive reaction: star changes color, glows, and spins faster on hover */
+.star-item:hover .star-item__svg {
+  fill: var(--blueprint);
+  animation: spin3DFast 1.2s linear infinite;
+  filter: drop-shadow(0 0 12px rgba(36, 81, 196, 0.45));
+}
+
+.star-item__label {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.star-item:hover .star-item__label {
+  color: var(--blueprint);
+  transform: translateY(2px);
+}
+
+/* Standard idle spin */
+@keyframes spin3D {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Hover fast spin with slight X-axis tilt for 3D depth */
+@keyframes spin3DFast {
+  0% {
+    transform: rotateX(15deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(15deg) rotateY(360deg);
+  }
+}
+
