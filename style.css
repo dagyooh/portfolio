@@ -142,99 +142,142 @@ img, video { max-width: 100%; display: block; }
   color: var(--blueprint) !important;
 }
 
-/* ---------- Cover Landing Layout (Image-Style Format) ---------- */
+/* ---------- Studio Karo Hero Section ---------- */
 
-.cover-landing {
-  max-width: 68rem;
+.hero-karo {
+  max-width: 76rem;
   margin: 0 auto;
-  padding: 3.5rem var(--edge) 4rem;
-  min-height: calc(100vh - 4rem);
+  padding: 3rem var(--edge) 4rem;
+}
+
+.hero-karo__title-row {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.cover-landing__header {
-  margin-bottom: 3rem;
-}
-
-.cover-landing__title {
-  margin: 0 0 1.5rem;
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 300;
-  letter-spacing: 0.25em;
+.hero-karo__first-name,
+.hero-karo__last-name {
+  font-size: clamp(3.5rem, 11vw, 9rem);
+  font-weight: 800;
+  margin: 0;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
   text-transform: uppercase;
 }
 
-.cover-landing__subtitle {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-family: var(--sans);
-  font-weight: 300;
+.hero-karo__tag {
+  font-family: var(--mono);
+  font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 0 0.5rem;
 }
 
-/* ---------- Star Cards Grid & Responsiveness ---------- */
+.hero-karo__subnav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  font-weight: 600;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
 
-.star-grid {
+.hero-karo__category {
+  text-decoration: none;
+  color: var(--ink);
+  transition: color 0.15s ease;
+}
+
+.hero-karo__category:hover,
+.hero-karo__category.active {
+  color: var(--blueprint);
+}
+
+/* ---------- Karo-Style Star Card Grid ---------- */
+
+.karo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  width: 100%;
+  gap: 1.5rem;
 }
 
-@media (max-width: 768px) {
-  .star-grid {
+@media (max-width: 860px) {
+  .hero-karo__title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-karo__tag {
+    text-align: left;
+    padding: 0.5rem 0;
+  }
+  .karo-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
 }
 
-.star-card {
+.karo-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: var(--ink);
-  padding: 2.5rem 1.5rem;
+  justify-content: space-between;
   border: 1px solid var(--line);
   background: #ffffff;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--ink);
+  min-height: 320px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
-.star-card:hover {
-  transform: translateY(-4px);
+.karo-card:hover {
   border-color: var(--ink);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
 }
 
-.star-card__shape {
-  width: 100%;
-  max-width: 180px;
-  aspect-ratio: 1 / 1;
+.karo-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.karo-card__title {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.karo-card__meta {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.karo-card__preview {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.25rem;
-}
-
-.star-card__svg {
+  padding: 2rem 1rem;
   width: 100%;
-  height: 100%;
+}
+
+.karo-card__svg {
+  width: 120px;
+  height: 120px;
   fill: var(--ink);
-  transition: fill 0.25s ease, transform 0.25s ease;
+  transition: fill 0.2s ease, transform 0.2s ease;
 }
 
-.star-card:hover .star-card__svg {
+.karo-card:hover .karo-card__svg {
   fill: var(--blueprint);
-  transform: scale(1.05);
-}
-
-.star-card__label {
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  transform: scale(1.08);
 }
 
 /* ---------- Projects Detail Section ---------- */
