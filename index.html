@@ -29,43 +29,60 @@
     </nav>
   </header>
 
-  <!-- Clean Top Landing Cover Layout -->
-  <section id="top" class="cover-landing">
-    <div class="cover-landing__header">
-      <h1 class="cover-landing__title">DAGYO OH</h1>
-      <p class="cover-landing__subtitle">Click a star to see more.</p>
+  <!-- Studio Karo Style Cover Landing -->
+  <section id="top" class="hero-karo">
+    <div class="hero-karo__title-row">
+      <h1 class="hero-karo__first-name">DAGYO</h1>
+      <div class="hero-karo__tag">[ ENGINEERING STUDENT AT UC SANTA BARBARA ]</div>
+      <h1 class="hero-karo__last-name">OH</h1>
     </div>
 
-    <!-- 3-Column Grid with Star Cards -->
-    <div class="star-grid">
-      <!-- Star 1: Enceladus -->
-      <a href="#enceladus" class="star-card">
-        <div class="star-card__shape">
-          <svg viewBox="0 0 24 24" class="star-card__svg" aria-hidden="true">
+    <div class="hero-karo__subnav">
+      <span class="hero-karo__category active">/SELECTED WORKS</span>
+      <a href="#enceladus" class="hero-karo__category">/ENCELADUS</a>
+      <a href="#lofi" class="hero-karo__category">/PYTHON LOFI</a>
+      <a href="#timer" class="hero-karo__category">/TURTLE TIMER</a>
+    </div>
+
+    <!-- Star Grid Cards -->
+    <div class="karo-grid">
+      <!-- Star Card 1 -->
+      <a href="#enceladus" class="karo-card">
+        <div class="karo-card__info">
+          <span class="karo-card__title">Enceladus</span>
+          <span class="karo-card__meta">2026 — Interactive Installation</span>
+        </div>
+        <div class="karo-card__preview">
+          <svg viewBox="0 0 24 24" class="karo-card__svg" aria-hidden="true">
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
           </svg>
         </div>
-        <span class="star-card__label">Enceladus</span>
       </a>
 
-      <!-- Star 2: Python Lofi -->
-      <a href="#lofi" class="star-card">
-        <div class="star-card__shape">
-          <svg viewBox="0 0 24 24" class="star-card__svg" aria-hidden="true">
+      <!-- Star Card 2 -->
+      <a href="#lofi" class="karo-card">
+        <div class="karo-card__info">
+          <span class="karo-card__title">Python Lofi</span>
+          <span class="karo-card__meta">2026 — Digital Audio</span>
+        </div>
+        <div class="karo-card__preview">
+          <svg viewBox="0 0 24 24" class="karo-card__svg" aria-hidden="true">
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
           </svg>
         </div>
-        <span class="star-card__label">Python Lofi</span>
       </a>
 
-      <!-- Star 3: Turtle Timer -->
-      <a href="#timer" class="star-card">
-        <div class="star-card__shape">
-          <svg viewBox="0 0 24 24" class="star-card__svg" aria-hidden="true">
+      <!-- Star Card 3 -->
+      <a href="#timer" class="karo-card">
+        <div class="karo-card__info">
+          <span class="karo-card__title">Turtle Timer</span>
+          <span class="karo-card__meta">2025 — Physical Computing</span>
+        </div>
+        <div class="karo-card__preview">
+          <svg viewBox="0 0 24 24" class="karo-card__svg" aria-hidden="true">
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
           </svg>
         </div>
-        <span class="star-card__label">Turtle Timer</span>
       </a>
     </div>
   </section>
