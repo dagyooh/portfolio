@@ -132,7 +132,7 @@ img, video { max-width: 100%; display: block; }
 
 .about-close-btn {
   font-size: 1.1rem;
-  margin-left: 0.5rem;
+  margin-left: 0.35rem;
   text-decoration: none !important;
   color: var(--ink) !important;
   line-height: 1;
@@ -211,7 +211,7 @@ img, video { max-width: 100%; display: block; }
   justify-content: center;
   gap: 4rem;
   flex-wrap: wrap;
-  perspective: 1000px; /* Perspective for 3D effect */
+  perspective: 1000px;
 }
 
 .star-item {
@@ -235,7 +235,7 @@ img, video { max-width: 100%; display: block; }
 
 .star-item:hover .star-item__svg {
   fill: var(--blueprint);
-  animation-duration: 2s; /* Spins faster on hover */
+  animation-duration: 2s;
 }
 
 .star-item__label {
@@ -251,7 +251,6 @@ img, video { max-width: 100%; display: block; }
   color: var(--ink);
 }
 
-/* Continuous 3D Y-Axis Rotation */
 @keyframes spin3D {
   0% {
     transform: rotateY(0deg);
@@ -352,7 +351,6 @@ img, video { max-width: 100%; display: block; }
   font-size: 0.78rem;
 }
 
-/* Constrained Jupyter Viewport */
 .notebook-embed {
   max-height: 380px;
   overflow-y: auto;
@@ -383,10 +381,10 @@ img, video { max-width: 100%; display: block; }
   text-decoration: underline;
 }
 
-/* ---------- About Page Layout (Aligned Justified Text) ---------- */
+/* ---------- About Page Layout ---------- */
 
 .about {
-  max-width: 48rem;
+  max-width: 52rem;
   margin: 0 auto;
   padding: 3rem var(--edge);
 }
@@ -401,7 +399,7 @@ img, video { max-width: 100%; display: block; }
 
 .about__content-grid {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 260px 1fr; /* Larger image column */
   gap: 2.5rem;
   align-items: start;
 }
@@ -433,21 +431,34 @@ img, video { max-width: 100%; display: block; }
   line-height: 1.25;
   margin-top: 0;
   margin-bottom: 1.5rem;
-  text-align: justify; /* Keeps left and right text edges perfectly aligned */
+  text-align: justify;
   hyphens: auto;
 }
 
+/* Restored Contact Section Font Styles */
 .about__contact {
-  margin-top: 3rem;
-  font-size: 1.1rem;
-  letter-spacing: -0.05em;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  letter-spacing: normal;
 }
 
-.about__contact-label {
-  margin-bottom: 0.25rem !important;
+.about__contact p {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  text-align: left;
 }
 
 .about__contact a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.about__contact a:hover {
+  color: var(--blueprint);
   text-decoration: underline;
 }
 
@@ -458,11 +469,11 @@ img, video { max-width: 100%; display: block; }
   }
 
   .about__photo-container {
-    max-width: 200px;
+    max-width: 260px;
   }
   
   .about__body p {
-    text-align: left; /* Reverts to left-aligned on narrow screens for readability */
+    text-align: left;
   }
 }
 
