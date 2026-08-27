@@ -261,6 +261,18 @@ img, video { max-width: 100%; display: block; }
   }
 }
 
+
+
+.star-nav__hint {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: -0.5rem 0 0.5rem 0;
+  opacity: 0.8;
+}
+
 /* ---------- Projects Detail Section ---------- */
 
 .project {
