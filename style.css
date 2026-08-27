@@ -33,7 +33,8 @@ body {
   font-family: var(--sans);
   font-weight: 300;
   color: var(--ink);
-  background-color: var(--paper);
+  background-color: var(--paper); 
+}
   line-height: 1.4;
   letter-spacing: -0.05em;
   -webkit-font-smoothing: antialiased;
@@ -540,10 +541,10 @@ body {
   background-color: transparent;
 }
 
-
-/* Custom Star Cursor for Video Player & All Internal Controls */
+/* Custom Star Cursor for Video Player & All Internal Controls (including 3-dots menu) */
 video,
 video::-webkit-media-controls,
+video::-webkit-media-controls-enclosure,
 video::-webkit-media-controls-panel,
 video::-webkit-media-controls-play-button,
 video::-webkit-media-controls-start-playback-button,
@@ -552,6 +553,10 @@ video::-webkit-media-controls-mute-button,
 video::-webkit-media-controls-timeline,
 video::-webkit-media-controls-current-time-display,
 video::-webkit-media-controls-time-remaining-display,
-video::-webkit-media-controls-fullscreen-button {
+video::-webkit-media-controls-fullscreen-button,
+video::-webkit-media-controls-overflow-button,
+video::-webkit-media-controls-toggle-closed-captions-button,
+::-webkit-media-controls-overflow-menu-list,
+::-webkit-media-controls-overflow-menu-list-item {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white" stroke="black" stroke-width="2" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') 16 16, pointer !important;
 }
