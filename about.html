@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About — Dagyo Oh</title>
   <meta name="description" content="About Dagyo Oh — Engineering Student at UC Santa Barbara.">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,26 +21,38 @@
     <a href="index.html" class="site-header__name">Dagyo&nbsp;Oh</a>
     <nav class="site-header__nav">
       <a href="index.html#projects">01 — Projects</a>
-      <a href="about.html" class="active">02 — About</a>
+      <a href="about.html" class="active">02 — About <span class="about-close-btn">×</span></a>
     </nav>
   </header>
 
-  <main id="about" class="about" style="padding-top: 4rem;">
-    <div class="section-heading">
+  <main class="about">
+    <!-- Section Heading: 02 ABOUT inline -->
+    <div class="section-heading__title">
       <span class="section-heading__num">02</span>
       <h2>About</h2>
     </div>
 
-    <div class="about__body">
-      <p>
-        Dagyo Oh is a student at UC Santa Barbara majoring in Mechanical Engineering and minoring in Media Arts and Design, and Music. She is interested in the places where hardware, software, and physical materials meet. 
-      </p>
-      <p>
-        Outside of coursework, she likes playing the trombone and euphonium, scrapbooking, making jewelry, and reading. 
-      </p>
+    <!-- 2-Column Layout: Profile Image + Description -->
+    <div class="about__content-grid">
+      <figure class="about__photo-container">
+        <img src="media/IMG_2974.jpg" alt="Dagyo Oh portrait" class="about__photo">
+      </figure>
 
-      <div class="about__contact">
-        <p><strong>Contact:</strong> Dagyo Oh — <a href="mailto:dagyooh@ucsb.edu">dagyooh@ucsb.edu</a></p>
+      <div class="about__body">
+        <p>
+          I am an Engineering Student at UC Santa Barbara working across interactive installations, 
+          physical computing, hardware prototyping, and digital audio.
+        </p>
+        <p>
+          My work explores the intersection of physical devices, software control systems, 
+          and creative media—building tactile tools and immersive experiences.
+        </p>
+
+        <div class="about__contact">
+          <p><strong>Contact & Links</strong></p>
+          <p>Email: <a href="mailto:dagyo@ucsb.edu">dagyo@ucsb.edu</a></p>
+          <p>Location: Santa Barbara, CA</p>
+        </div>
       </div>
     </div>
   </main>
