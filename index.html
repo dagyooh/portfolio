@@ -242,5 +242,62 @@
     })();
   </script>
 
+<script>
+  (function () {
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let width, height;
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetX = 0;
+    let targetY = 0;
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      if (!mouseX && !mouseY) {
+        mouseX = targetX = width / 2;
+        mouseY = targetY = height / 2;
+      }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    window.addEventListener('mousemove', (e) => {
+      targetX = e.clientX;
+      targetY = e.clientY;
+    });
+
+    function draw() {
+      // Smooth interpolation for fluid movement
+      mouseX += (targetX - mouseX) * 0.05;
+      mouseY += (targetY - mouseY) * 0.05;
+
+      // Base background (Soft Sky Blue)
+      ctx.fillStyle = '#6cb0ff';
+      ctx.fillRect(0, 0, width, height);
+
+      // Dynamic Radial Light Gradient centered on mouse movement
+      const radialGrad = ctx.createRadialGradient(
+        mouseX, mouseY, 50,
+        mouseX, mouseY, Math.max(width, height) * 0.85
+      );
+      radialGrad.addColorStop(0, 'rgba(235, 245, 255, 0.95)'); // Bright central highlight
+      radialGrad.addColorStop(0.4, 'rgba(140, 195, 255, 0.7)'); // Mid light blue
+      radialGrad.addColorStop(1, 'rgba(75, 145, 240, 0.1)');   // Deep sky blue edge
+
+      ctx.fillStyle = radialGrad;
+      ctx.fillRect(0, 0, width, height);
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+  })();
+</script>
+
+  
 </body>
 </html>
