@@ -27,22 +27,22 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Cursor Styles */
-body {
+/* Global Custom Star Cursor Setup */
+body, html {
   margin: 0;
   font-family: var(--sans);
   font-weight: 300;
   color: var(--ink);
-  background-color: var(--paper); 
-}
+  background-color: var(--paper);
   line-height: 1.4;
   letter-spacing: -0.05em;
   -webkit-font-smoothing: antialiased;
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="black"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') 16 16, auto;
 }
 
-a, button, input, textarea, select {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white" stroke="black" stroke-width="2" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') 16 16, pointer;
+/* Pointer Cursor for Links, Buttons, Inputs & Media Elements */
+a, button, input, textarea, select, video {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white" stroke="black" stroke-width="2" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') 16 16, pointer !important;
 }
 
 a { color: inherit; }
@@ -404,7 +404,7 @@ img, video { max-width: 100%; display: block; }
 }
 
 .about__heading {
-  font-size: clamp(1.6rem, 4vw, 2.2rem); /* Scaled down size matching section headers */
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
   font-weight: 300;
   letter-spacing: -0.05em;
   margin: 0;
@@ -450,7 +450,6 @@ img, video { max-width: 100%; display: block; }
   hyphens: auto;
 }
 
-/* Restored Contact Section Font Styles */
 .about__contact {
   margin-top: 2.5rem;
   padding-top: 1.5rem;
@@ -491,6 +490,7 @@ img, video { max-width: 100%; display: block; }
     text-align: left;
   }
 }
+
 /* ---------- Footer ---------- */
 
 footer {
@@ -502,75 +502,3 @@ footer {
   max-width: 62rem;
   margin: 0 auto;
 }
-
-
-/* Ensure video and media elements keep the custom star cursor */
-video, 
-video::-webkit-media-controls,
-video::-webkit-media-controls-panel,
-video::-webkit-media-controls-play-button,
-video::-webkit-media-controls-start-playback-button {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white" stroke="black" stroke-width="2" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') 16 16, pointer !important;
-}
-
-/* Dynamic Canvas Background & Grain Overlay */
-#bg-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -2;
-  pointer-events: none;
-}
-
-.grain-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.25;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-/* Adjust page background to blend smoothly with canvas */
-body {
-  background-color: transparent;
-}
-
-/* Custom Star Cursor for Video Player & All Internal Controls (including 3-dots menu) */
-video,
-video::-webkit-media-controls,
-video::-webkit-media-controls-enclosure,
-video::-webkit-media-controls-panel,
-video::-webkit-media-controls-play-button,
-video::-webkit-media-controls-start-playback-button,
-video::-webkit-media-controls-volume-slider,
-video::-webkit-media-controls-mute-button,
-video::-webkit-media-controls-timeline,
-video::-webkit-media-controls-current-time-display,
-video::-webkit-media-controls-time-remaining-display,
-video::-webkit-media-controls-fullscreen-button,
-video::-webkit-media-controls-overflow-button,
-video::-webkit-media-controls-toggle-closed-captions-button,
-::-webkit-media-controls-overflow-menu-list,
-::-webkit-media-controls-overflow-menu-list-item {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white" stroke="black" stroke-width="2" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') 16 16, pointer !important;
-}
-
-
-.video-wrapper {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
-
-.video-overlay {
-  position: absolute;
-  inset: 0;
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white" stroke="black" stroke-width="2" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') 16 16, pointer !important;
-}
-
