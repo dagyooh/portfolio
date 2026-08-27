@@ -556,3 +556,20 @@ footer {
     max-width: 280px;
   }
 }
+
+
+.about__photo-container {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  padding: 0.5rem;
+  overflow: hidden; /* Clips any overflow outside the box */
+}
+
+.about__photo {
+  width: 100%;
+  height: 420px; /* Gives the image box a set height to force cropping */
+  object-fit: cover;
+  object-position: center 85%; /* Focuses lower down to crop the top sky */
+  display: block;
+}
