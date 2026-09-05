@@ -233,7 +233,52 @@
   <img id="modal-img" class="image-modal__content" src="" alt="Enlarged view">
 </div>
 
+<script>
+  (function() {
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeBtn = document.getElementById('modal-close');
 
+    if (!modal || !modalImg) return;
+
+    // Attach click event to all project images and the about page photo
+    const popoutImages = document.querySelectorAll('.project__media img, .project__gallery img, .about__photo');
+
+    popoutImages.forEach(function(img) {
+      img.addEventListener('click', function(e) {
+        e.preventDefault();
+        modalImg.src = this.src;
+        modalImg.alt = this.alt || 'Enlarged photo';
+        modal.classList.add('is-active');
+        modal.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove('is-active');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+    }
+
+    // Close when clicking outside the popped-out image
+    modal.addEventListener('click', function(e) {
+      if (e.target !== modalImg) {
+        closeModal();
+      }
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Close on Escape key press
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+        closeModal();
+      }
+    });
+  })();
+</script>
   
 </body>
 </html>
