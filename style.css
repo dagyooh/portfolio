@@ -506,7 +506,7 @@ footer {
   align-items: center;
   justify-content: center;
   /* Tighten spacing across the title elements */
-  gap: 0.02em; 
+  gap: 0.03em; 
 }
 
 .hero__doodle-link {
@@ -518,8 +518,8 @@ footer {
 }
 
 .hero__doodle-img {
-  width: clamp(3.2rem, 10vw, 6.5rem);
-  height: clamp(3.2rem, 10vw, 6.5rem);
+  width: clamp(3.2rem, 9vw, 6.5rem);
+  height: clamp(3.2rem, 9vw, 6.5rem);
   object-fit: contain;
   display: block;
   transition: transform 0.2s ease;
