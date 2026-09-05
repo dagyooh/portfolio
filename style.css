@@ -173,8 +173,8 @@ img, video { max-width: 100%; display: block; }
 }
 
 .hero__doodle-img {
-  width: clamp(2.8rem, 9vw, 6.5rem);
-  height: clamp(2.8rem, 9vw, 6.5rem);
+  width: clamp(4rem, 9vw, 6.5rem);
+  height: clamp(4rem, 9vw, 6.5rem);
   object-fit: contain;
   display: block;
   transition: transform 0.2s ease;
@@ -189,7 +189,7 @@ img, video { max-width: 100%; display: block; }
   font-size: clamp(1rem, 2.2vw, 1.5rem);
   font-weight: 300;
   color: var(--ink);
-  margin: 0.5;
+  margin: 0.3;
   text-transform: lowercase;
   letter-spacing: 0.01em;
 }
