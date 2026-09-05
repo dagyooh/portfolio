@@ -152,7 +152,7 @@ img, video { max-width: 100%; display: block; }
 
 .hero__name {
   margin: 0;
-  font-size: clamp(3rem, 10vw, 7.5rem);
+  font-size: clamp(4rem, 14vw, 8.5rem);
   line-height: 1;
   font-weight: 400;
   text-transform: lowercase;
@@ -485,4 +485,38 @@ footer {
   margin: 0 auto;
   letter-spacing: 0.02em;
   text-transform: lowercase;
+}
+
+
+/* ---------- Image Hover Pop-Out & Zoom Effect ---------- */
+
+.project__media,
+.project__gallery figure {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: #fff;
+  overflow: hidden; /* Prevents zoomed image from overflowing container bounds */
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+/* Card lift on hover */
+.project__media:hover,
+.project__gallery figure:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+
+/* Smooth scaling transition for photos and videos */
+.project__media video,
+.project__media img,
+.project__gallery img {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Bigger inner image zoom on hover */
+.project__media:hover img,
+.project__media:hover video,
+.project__gallery figure:hover img {
+  transform: scale(1.08); /* Increased zoom level */
 }
