@@ -1,7 +1,48 @@
 /* ===========================================================
    Dagyo Oh — Portfolio Stylesheet
    =========================================================== */
+/* Dark Theme Color Variables */
+[data-theme="dark"] {
+  --paper: #121210;
+  --ink: #f0f0ec;
+  --muted: #a0a098;
+  --line: #2e2e2a;
+  --grid-line: rgba(255, 255, 255, 0.04);
+  --blueprint: #5c84f6;
+}
 
+/* Dark mode custom cursor support */
+[data-theme="dark"], 
+[data-theme="dark"] body {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') 16 16, auto;
+}
+
+/* Invert doodle graphics in dark mode */
+[data-theme="dark"] .hero__doodle-img,
+[data-theme="dark"] .star-item__img {
+  filter: invert(1);
+}
+
+/* Header background adapt for dark mode */
+[data-theme="dark"] .site-header {
+  background: rgba(18, 18, 16, 0.85);
+}
+
+/* Toggle button styles */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  padding: 0;
+  text-transform: lowercase;
+  transition: color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--blueprint);
+}
 :root {
   --paper: #fbfbf9;
   --ink: #131311;
