@@ -145,14 +145,14 @@ img, video { max-width: 100%; display: block; }
   justify-content: center;
   text-align: center;
   gap: 1.25rem;
-  padding: 4rem var(--edge);
+  padding: 3rem var(--edge);
   max-width: 68rem;
   margin: 0 auto;
 }
 
 .hero__name {
   margin: 0;
-  font-size: clamp(3.5rem, 12vw, 7.5rem);
+  font-size: clamp(3rem, 10vw, 7.5rem);
   line-height: 1;
   font-weight: 400;
   text-transform: lowercase;
@@ -162,29 +162,31 @@ img, video { max-width: 100%; display: block; }
   justify-content: center;
 }
 
-/* Doodle Inline Link Styling */
 .hero__doodle-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0.1em;
-  color: var(--ink);
-  transition: transform 0.2s ease, color 0.2s ease;
+  margin-left: 0.12em;
+  margin-right: -0.05em;
+  line-height: 0;
+  text-decoration: none;
 }
 
-.hero__doodle-svg {
-  width: clamp(3.2rem, 10vw, 6.5rem);
-  height: clamp(3.2rem, 10vw, 6.5rem);
+.hero__doodle-img {
+  width: clamp(2.8rem, 9vw, 6.5rem);
+  height: clamp(2.8rem, 9vw, 6.5rem);
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease;
 }
 
-.hero__doodle-link:hover {
-  transform: scale(1.15) rotate(-3deg);
-  color: var(--blueprint);
+.hero__doodle-link:hover .hero__doodle-img {
+  transform: scale(1.1) rotate(-3deg);
 }
 
 .hero__statement {
   max-width: 38rem;
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
   font-weight: 300;
   color: var(--ink);
   margin: 0;
@@ -194,50 +196,43 @@ img, video { max-width: 100%; display: block; }
 
 .hero__instruction {
   font-family: var(--mono);
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1.8vw, 0.85rem);
   color: var(--muted);
-  margin: 0 0 1.5rem 0;
+  margin: 0;
   text-transform: lowercase;
   letter-spacing: 0.01em;
 }
 
-/* ---------- Custom Hand-Drawn Navigation ---------- */
-
 .star-nav {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  gap: 3.5rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .star-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   text-decoration: none;
   color: var(--ink);
+  width: 80px;
   transition: transform 0.25s ease;
 }
 
-.star-item:hover {
-  transform: translateY(-4px) scale(1.08);
-}
-
-.star-item__svg {
+.star-item__img {
   width: 64px;
   height: 64px;
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 2.2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: stroke 0.2s ease, filter 0.2s ease;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.star-item:hover .star-item__svg {
-  stroke: var(--blueprint);
+.star-item:hover .star-item__img {
+  transform: translateY(-3px);
   filter: drop-shadow(0 2px 8px rgba(36, 81, 196, 0.25));
 }
 
@@ -252,6 +247,28 @@ img, video { max-width: 100%; display: block; }
 
 .star-item:hover .star-item__label {
   color: var(--blueprint);
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 2rem 1rem;
+    gap: 1rem;
+    min-height: 85vh;
+  }
+
+  .star-nav {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .star-item {
+    width: 70px;
+  }
+
+  .star-item__img {
+    width: 52px;
+    height: 52px;
+  }
 }
 
 /* ---------- Projects Detail Section ---------- */
@@ -282,10 +299,24 @@ img, video { max-width: 100%; display: block; }
 
 .project__meta-line span { margin: 0 0.4em; color: var(--line); }
 
-.project__media {
-  margin: 0 0 1.5rem;
+.project__media,
+.project__gallery figure {
+  margin: 0;
   border: 1px solid var(--line);
   background: #fff;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.project__media {
+  margin-bottom: 1.5rem;
+}
+
+.project__media:hover,
+.project__gallery figure:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  z-index: 2;
 }
 
 .project__media video,
@@ -305,7 +336,7 @@ img, video { max-width: 100%; display: block; }
   background: var(--paper);
   border-top: 1px solid var(--line);
   letter-spacing: 0.01em;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .project__gallery {
@@ -313,12 +344,6 @@ img, video { max-width: 100%; display: block; }
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.25rem;
   margin: 0 0 2rem;
-}
-
-.project__gallery figure {
-  margin: 0;
-  border: 1px solid var(--line);
-  background: #fff;
 }
 
 .project__gallery img {
@@ -333,7 +358,7 @@ img, video { max-width: 100%; display: block; }
   letter-spacing: 0em;
   line-height: 1.4;
   margin: 0 0 1.5rem;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .project__body p {
@@ -343,7 +368,7 @@ img, video { max-width: 100%; display: block; }
   font-size: 0.98rem;
   letter-spacing: 0.01em;
   line-height: 1.45;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .notebook-embed {
@@ -434,7 +459,7 @@ img, video { max-width: 100%; display: block; }
   margin-top: 0;
   margin-bottom: 1.5rem;
   text-align: left;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 @media (max-width: 640px) {
@@ -460,243 +485,4 @@ footer {
   margin: 0 auto;
   letter-spacing: 0.02em;
   text-transform: lowercase;
-}
-
-
-
-
-/* Style for face doodle image in the main title */
-.hero__doodle-img {
-  width: clamp(3.2rem, 10vw, 6.5rem);
-  height: clamp(3.2rem, 10vw, 6.5rem);
-  object-fit: contain;
-  display: inline-block;
-  vertical-align: middle;
-  transition: transform 0.2s ease;
-}
-
-.hero__doodle-link:hover .hero__doodle-img {
-  transform: scale(1.15) rotate(-3deg);
-}
-
-/* Style for navigation icon images */
-.star-item__img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.star-item:hover .star-item__img {
-  transform: translateY(-2px);
-  filter: drop-shadow(0 2px 8px rgba(36, 81, 196, 0.25));
-}
-
-
-/* ---------- Title & Doodle Adjustments ---------- */
-
-.hero__name {
-  margin: 0;
-  font-size: clamp(3.5rem, 12vw, 7.5rem);
-  line-height: 1;
-  font-weight: 400;
-  text-transform: lowercase;
-  letter-spacing: -0.02em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Tighten spacing across the title elements */
-  gap: 0.03em; 
-}
-
-.hero__doodle-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 -0.05em; /* Negative margin pulls 'dagyo', doodle, and 'h' closer together */
-  line-height: 0;
-}
-
-.hero__doodle-img {
-  width: clamp(3.2rem, 9vw, 6.5rem);
-  height: clamp(3.2rem, 9vw, 6.5rem);
-  object-fit: contain;
-  display: block;
-  transition: transform 0.2s ease;
-}
-
-.hero__doodle-link:hover .hero__doodle-img {
-  transform: scale(1.1) rotate(-3deg);
-}
-
-/* ---------- Icon Sizing & Alignment ---------- */
-
-.star-nav {
-  display: flex;
-  align-items: flex-start; /* Keeps item labels horizontally aligned */
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-}
-
-.star-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  color: var(--ink);
-  width: 80px; /* Fixed width container to keep alignment uniform */
-  transition: transform 0.25s ease;
-}
-
-.star-item__img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain; /* Ensures all doodle images scale uniformly into the 64x64 square */
-  display: block;
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.star-item:hover .star-item__img {
-  transform: translateY(-3px);
-  filter: drop-shadow(0 2px 8px rgba(36, 81, 196, 0.25));
-}
-
-
-/* ===========================================================
-   Dagyo Oh — Portfolio Stylesheet Adjustments
-   =========================================================== */
-
-/* ---------- Hero / Cover Mobile Hierarchy & Spacing ---------- */
-
-.hero {
-  min-height: calc(100vh - 4rem);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 1.5rem; /* Base gap */
-  padding: 3rem var(--edge);
-  max-width: 68rem;
-  margin: 0 auto;
-}
-
-/* Main title styling */
-.hero__name {
-  margin: 0;
-  font-size: clamp(3rem, 10vw, 7.5rem);
-  line-height: 1;
-  font-weight: 400;
-  text-transform: lowercase;
-  letter-spacing: -0.02em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-}
-
-/* Controlled spacing around doodle */
-.hero__doodle-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 0.12em;  /* Slightly wider gap after "dagyo" */
-  margin-right: -0.05em; /* Tighter gap before "h" */
-  line-height: 0;
-}
-
-.hero__doodle-img {
-  width: clamp(2.8rem, 9vw, 6.5rem);
-  height: clamp(2.8rem, 9vw, 6.5rem);
-  object-fit: contain;
-  display: block;
-  transition: transform 0.2s ease;
-}
-
-.hero__doodle-link:hover .hero__doodle-img {
-  transform: scale(1.1) rotate(-3deg);
-}
-
-/* Subtitle and instruction spacing */
-.hero__statement {
-  max-width: 38rem;
-  font-size: clamp(1rem, 2.2vw, 1.5rem);
-  font-weight: 300;
-  color: var(--ink);
-  margin: 0;
-  text-transform: lowercase;
-  letter-spacing: 0.01em;
-}
-
-.hero__instruction {
-  font-family: var(--mono);
-  font-size: clamp(0.75rem, 1.8vw, 0.85rem);
-  color: var(--muted);
-  margin: 0;
-  text-transform: lowercase;
-  letter-spacing: 0.01em;
-}
-
-/* Larger gap between title/subtitle block and navigation icons */
-.star-nav {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-  margin-top: 2rem; /* Increased spacing above icons */
-}
-
-/* Maintain cover hierarchy on small mobile screens */
-@media (max-width: 640px) {
-  .hero {
-    padding: 2rem 1rem;
-    gap: 1rem;
-    min-height: 85vh;
-  }
-
-  .star-nav {
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-  }
-
-  .star-item {
-    width: 70px;
-  }
-
-  .star-item__img {
-    width: 52px;
-    height: 52px;
-  }
-}
-
-/* ---------- Image Hover Pop-Out Effect ---------- */
-
-.project__media,
-.project__gallery figure {
-  margin: 0;
-  border: 1px solid var(--line);
-  background: #fff;
-  overflow: hidden;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-}
-
-.project__media:hover,
-.project__gallery figure:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-  z-index: 2;
-}
-
-/* ---------- Text Capitalization Rules ---------- */
-
-/* Recapitalize body descriptions and captions */
-.project__intro p,
-.project__body p,
-.project__media figcaption,
-.project__gallery figcaption,
-.about__body p {
-  text-transform: none; /* Preserves standard capitalization */
 }
