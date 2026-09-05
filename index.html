@@ -32,40 +32,32 @@
   <!-- Hero / Cover Section -->
   <section id="top" class="hero">
 
-    <!-- Title with Doodle Replacing 'o' in 'oh' -->
-    <h1 class="hero__name">
-      dagyo <a href="about.html" class="hero__doodle-link" title="about dagyo">
-        <svg class="hero__doodle-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <!-- Face outline -->
-          <path d="M 28 55 C 26 72, 38 84, 50 84 C 62 84, 74 72, 72 55" />
-          <!-- Hair bang strands & sides -->
-          <path d="M 32 52 C 28 38, 38 32, 42 50" />
-          <path d="M 42 50 C 44 36, 48 34, 50 50" />
-          <path d="M 50 50 C 52 36, 56 34, 58 50" />
-          <path d="M 58 50 C 62 38, 72 38, 68 52" />
-          <path d="M 32 50 C 24 40, 36 28, 48 32" />
-          <path d="M 68 50 C 76 40, 64 28, 52 32" />
-          <path d="M 48 28 C 47 20, 50 14, 52 10 C 52 16, 54 22, 50 28" />
-          <!-- Hair flips -->
-          <path d="M 28 58 C 22 62, 20 70, 24 74 C 28 72, 28 66, 32 64" />
-          <path d="M 72 58 C 78 62, 80 70, 76 74 C 72 72, 72 66, 68 64" />
-          <!-- Glasses -->
-          <circle cx="40" cy="56" r="8" />
-          <circle cx="60" cy="56" r="8" />
-          <line x1="48" y1="56" x2="52" y2="56" />
-          <line x1="32" y1="56" x2="28" y2="54" />
-          <line x1="68" y1="56" x2="72" y2="54" />
-          <!-- Eyes inside glasses -->
-          <circle cx="42" cy="56" r="2.5" fill="currentColor" />
-          <circle cx="62" cy="56" r="2.5" fill="currentColor" />
-          <!-- Nose & Smile -->
-          <circle cx="50" cy="63" r="1.5" fill="currentColor" />
-          <path d="M 42 70 Q 50 75 58 70" />
-          <!-- Star accessory -->
-          <polygon points="24,38 26,42 30,42 27,45 28,49 24,46 20,49 21,45 18,42 22,42" fill="currentColor" stroke="none" />
-        </svg>
-      </a>h
-    </h1>
+<!-- Main Hero Title with Doodle Image replacing 'o' in 'oh' -->
+<h1 class="hero__name">
+  dagyo <a href="about.html" class="hero__doodle-link" title="about dagyo">
+    <img src="media/doodle_face.png" alt="Dagyo portrait doodle" class="hero__doodle-img">
+  </a>h
+</h1>
+
+<!-- Project Icon Navigation -->
+<div class="star-nav">
+  <a href="#enceladus" class="star-item">
+    <img src="media/icon_saturn.png" alt="Enceladus icon" class="star-item__img">
+    <span class="star-item__label">enceladus</span>
+  </a>
+
+  <a href="#lofi" class="star-item">
+    <img src="media/icon_lofi.png" alt="Python Lofi icon" class="star-item__img">
+    <span class="star-item__label">python lofi</span>
+  </a>
+
+  <a href="#timer" class="star-item">
+    <img src="media/icon_timer.png" alt="Turtle Timer icon" class="star-item__img">
+    <span class="star-item__label">turtle timer</span>
+  </a>
+</div>
+    
+
 
     <p class="hero__statement">
       engineering student at uc santa barbara
@@ -76,43 +68,6 @@
       click to go to a project, or scroll to explore
     </p>
 
-    <!-- Project Icon Navigation -->
-    <div class="star-nav">
-      <!-- Icon 1: Saturn (Enceladus) -->
-      <a href="#enceladus" class="star-item">
-        <svg viewBox="0 0 64 64" class="star-item__svg" aria-hidden="true">
-          <ellipse cx="32" cy="32" rx="12" ry="12" />
-          <path d="M 10 36 C 8 24, 24 16, 42 18 C 54 20, 58 28, 52 34 C 42 42, 20 44, 10 36 Z" />
-        </svg>
-        <span class="star-item__label">enceladus</span>
-      </a>
-
-      <!-- Icon 2: Music Notes (Python Lofi) -->
-      <a href="#lofi" class="star-item">
-        <svg viewBox="0 0 64 64" class="star-item__svg" aria-hidden="true">
-          <circle cx="20" cy="44" r="5" fill="currentColor" />
-          <circle cx="44" cy="36" r="5" fill="currentColor" />
-          <path d="M 25 44 L 25 16 L 49 10 L 49 36" />
-          <path d="M 25 24 L 49 18" />
-        </svg>
-        <span class="star-item__label">python lofi</span>
-      </a>
-
-      <!-- Icon 3: Turtle (Turtle Timer) -->
-      <a href="#timer" class="star-item">
-        <svg viewBox="0 0 64 64" class="star-item__svg" aria-hidden="true">
-          <circle cx="32" cy="32" r="14" />
-          <!-- Head with # symbol -->
-          <circle cx="18" cy="18" r="6" />
-          <path d="M 16 15 L 16 21 M 20 15 L 20 21 M 14 17 L 22 17 M 14 19 L 22 19" stroke-width="1.5" />
-          <!-- Flippers -->
-          <path d="M 20 24 Q 12 20 10 26" />
-          <path d="M 44 24 Q 52 20 54 26" />
-          <path d="M 20 40 Q 12 44 10 38" />
-          <path d="M 44 40 Q 52 44 54 38" />
-        </svg>
-        <span class="star-item__label">turtle timer</span>
-      </a>
     </div>
 
   </section>
