@@ -29,6 +29,7 @@
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">dark</button>
     </nav>
   </header>
+
   <!-- Hero / Cover Section -->
   <section id="top" class="hero">
 
@@ -202,7 +203,15 @@
     <p>dagyo oh — uc santa barbara — 2026</p>
   </footer>
 
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="image-modal" aria-hidden="true">
+    <button id="modal-close" class="image-modal__close" aria-label="Close image modal">&times;</button>
+    <img id="modal-img" class="image-modal__content" src="" alt="Enlarged view">
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/ipynb2html@0.4.0-rc.1/dist/ipynb2html-full.min.js" crossorigin="anonymous"></script>
+
+  <!-- Notebook Handler -->
   <script>
     (function () {
       var target = document.getElementById('lofi-notebook');
@@ -227,86 +236,79 @@
     })();
   </script>
 
-<!-- Pop-out Lightbox -->
-<div id="image-modal" class="image-modal" aria-hidden="true">
-  <button id="modal-close" class="image-modal__close" aria-label="Close image modal">&times;</button>
-  <img id="modal-img" class="image-modal__content" src="" alt="Enlarged view">
-</div>
+  <!-- Lightbox Pop-out Handler -->
+  <script>
+    (function() {
+      const modal = document.getElementById('image-modal');
+      const modalImg = document.getElementById('modal-img');
+      const closeBtn = document.getElementById('modal-close');
 
-<script>
-  (function() {
-    const modal = document.getElementById('image-modal');
-    const modalImg = document.getElementById('modal-img');
-    const closeBtn = document.getElementById('modal-close');
+      if (!modal || !modalImg) return;
 
-    if (!modal || !modalImg) return;
+      const popoutImages = document.querySelectorAll('.project__media img, .project__gallery img, .about__photo');
 
-    // Attach click event to all project images and the about page photo
-    const popoutImages = document.querySelectorAll('.project__media img, .project__gallery img, .about__photo');
-
-    popoutImages.forEach(function(img) {
-      img.addEventListener('click', function(e) {
-        e.preventDefault();
-        modalImg.src = this.src;
-        modalImg.alt = this.alt || 'Enlarged photo';
-        modal.classList.add('is-active');
-        modal.setAttribute('aria-hidden', 'false');
+      popoutImages.forEach(function(img) {
+        img.addEventListener('click', function(e) {
+          e.preventDefault();
+          modalImg.src = this.src;
+          modalImg.alt = this.alt || 'Enlarged photo';
+          modal.classList.add('is-active');
+          modal.setAttribute('aria-hidden', 'false');
+        });
       });
-    });
 
-    function closeModal() {
-      modal.classList.remove('is-active');
-      modal.setAttribute('aria-hidden', 'true');
-      modalImg.src = '';
-    }
-
-    // Close when clicking outside the popped-out image
-    modal.addEventListener('click', function(e) {
-      if (e.target !== modalImg) {
-        closeModal();
+      function closeModal() {
+        modal.classList.remove('is-active');
+        modal.setAttribute('aria-hidden', 'true');
+        modalImg.src = '';
       }
-    });
 
-    if (closeBtn) {
-      closeBtn.addEventListener('click', closeModal);
-    }
+      modal.addEventListener('click', function(e) {
+        if (e.target !== modalImg) {
+          closeModal();
+        }
+      });
 
-    // Close on Escape key press
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.classList.contains('is-active')) {
-        closeModal();
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
       }
-    });
-  })();
-</script>
 
-<script>
-  (function() {
-    const toggleBtn = document.getElementById('theme-toggle');
-    const storedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    let currentTheme = storedTheme || (prefersDark ? 'dark' : 'light');
-    
-    function applyTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+
+  <!-- Dark Mode Theme Handler -->
+  <script>
+    (function() {
+      const toggleBtn = document.getElementById('theme-toggle');
+      const storedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      let currentTheme = storedTheme || (prefersDark ? 'dark' : 'light');
+      
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        if (toggleBtn) {
+          toggleBtn.textContent = theme === 'dark' ? 'light' : 'dark';
+        }
+        localStorage.setItem('theme', theme);
+      }
+      
+      applyTheme(currentTheme);
+      
       if (toggleBtn) {
-        toggleBtn.textContent = theme === 'dark' ? 'light' : 'dark';
+        toggleBtn.addEventListener('click', function() {
+          currentTheme = currentTheme === 'dark' ? 'dark' : 'light';
+          currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          applyTheme(currentTheme);
+        });
       }
-      localStorage.setItem('theme', theme);
-    }
-    
-    applyTheme(currentTheme);
-    
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', function() {
-        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        applyTheme(currentTheme);
-      });
-    }
-  })();
-</script>
-
+    })();
+  </script>
   
 </body>
 </html>
