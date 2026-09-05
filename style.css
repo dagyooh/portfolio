@@ -562,3 +562,141 @@ footer {
   transform: translateY(-3px);
   filter: drop-shadow(0 2px 8px rgba(36, 81, 196, 0.25));
 }
+
+
+/* ===========================================================
+   Dagyo Oh — Portfolio Stylesheet Adjustments
+   =========================================================== */
+
+/* ---------- Hero / Cover Mobile Hierarchy & Spacing ---------- */
+
+.hero {
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem; /* Base gap */
+  padding: 3rem var(--edge);
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+/* Main title styling */
+.hero__name {
+  margin: 0;
+  font-size: clamp(3rem, 10vw, 7.5rem);
+  line-height: 1;
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+/* Controlled spacing around doodle */
+.hero__doodle-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.12em;  /* Slightly wider gap after "dagyo" */
+  margin-right: -0.05em; /* Tighter gap before "h" */
+  line-height: 0;
+}
+
+.hero__doodle-img {
+  width: clamp(2.8rem, 9vw, 6.5rem);
+  height: clamp(2.8rem, 9vw, 6.5rem);
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.hero__doodle-link:hover .hero__doodle-img {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+/* Subtitle and instruction spacing */
+.hero__statement {
+  max-width: 38rem;
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
+  font-weight: 300;
+  color: var(--ink);
+  margin: 0;
+  text-transform: lowercase;
+  letter-spacing: 0.01em;
+}
+
+.hero__instruction {
+  font-family: var(--mono);
+  font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+  color: var(--muted);
+  margin: 0;
+  text-transform: lowercase;
+  letter-spacing: 0.01em;
+}
+
+/* Larger gap between title/subtitle block and navigation icons */
+.star-nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem; /* Increased spacing above icons */
+}
+
+/* Maintain cover hierarchy on small mobile screens */
+@media (max-width: 640px) {
+  .hero {
+    padding: 2rem 1rem;
+    gap: 1rem;
+    min-height: 85vh;
+  }
+
+  .star-nav {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .star-item {
+    width: 70px;
+  }
+
+  .star-item__img {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* ---------- Image Hover Pop-Out Effect ---------- */
+
+.project__media,
+.project__gallery figure {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: #fff;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.project__media:hover,
+.project__gallery figure:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+/* ---------- Text Capitalization Rules ---------- */
+
+/* Recapitalize body descriptions and captions */
+.project__intro p,
+.project__body p,
+.project__media figcaption,
+.project__gallery figcaption,
+.about__body p {
+  text-transform: none; /* Preserves standard capitalization */
+}
