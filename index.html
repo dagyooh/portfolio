@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dagyo Oh — Portfolio</title>
+  <title>dagyo oh — portfolio</title>
   <meta name="description" content="Dagyo Oh — Engineering Student at UC Santa Barbara. Interactive installations, physical computing, and generative media.">
 
   <link rel="stylesheet" href="style.css">
@@ -14,8 +14,6 @@
 </head>
 <body>
 
-
-  
   <div class="reg-marks" aria-hidden="true">
     <span class="reg tl"></span><span class="reg-label" style="top:1.25rem;left:1.25rem;">A</span>
     <span class="reg tr"></span><span class="reg-label" style="top:1.25rem;right:1.25rem;">4</span>
@@ -24,62 +22,60 @@
   </div>
 
   <header class="site-header">
-    <a href="#top" class="site-header__name">Dagyo&nbsp;Oh</a>
+    <a href="#top" class="site-header__name">dagyo oh</a>
     <nav class="site-header__nav">
-      <!-- Directs to Selected Work hero section -->
-      <a href="#selected-work">01 — Projects</a>
-      <a href="about.html">02 — About</a>
+      <a href="#projects">projects</a>
+      <a href="about.html">about</a>
     </nav>
   </header>
 
-  <!-- Centered Hero Landing Layout -->
+  <!-- Cover Landing Section -->
   <section id="top" class="hero">
 
-    <h1 class="hero__name">Dagyo Oh</h1>
+    <h1 class="hero__name">dagyo oh</h1>
 
     <p class="hero__statement">
-      Engineering Student at UC Santa Barbara
+      engineering student at uc santa barbara
     </p>
 
-    <!-- Selected Works Header + 3D Spinning Stars (Anchored here) -->
+    <!-- Custom Drawn Project Icons -->
+    <div class="star-nav">
+      <!-- Star 1: Saturn (Enceladus) -->
+      <a href="#enceladus" class="star-item">
+        <svg viewBox="0 0 64 64" class="star-item__svg" aria-hidden="true">
+          <ellipse cx="32" cy="32" rx="14" ry="14"/>
+          <path d="M 12,38 C 10,28 20,20 38,20 C 52,20 56,28 50,34 C 44,40 22,46 12,38 Z"/>
+        </svg>
+        <span class="star-item__label">enceladus</span>
+      </a>
 
-  <!-- Selected Works Header + 3D Spinning Stars -->
-    <div id="selected-work" class="hero__selected-work">
-      <div class="section-heading__title">
-        <span class="section-heading__num">01</span>
-        <h2>Selected Work</h2>
-      </div>
+      <!-- Star 2: Music Note (Python Lofi) -->
+      <a href="#lofi" class="star-item">
+        <svg viewBox="0 0 64 64" class="star-item__svg" aria-hidden="true">
+          <circle cx="20" cy="46" r="5" fill="black"/>
+          <circle cx="44" cy="38" r="5" fill="black"/>
+          <path d="M 25 46 L 25 18 L 49 10 L 49 38 M 25 26 L 49 18"/>
+        </svg>
+        <span class="star-item__label">python lofi</span>
+      </a>
 
-      <!-- Instruction Hint Caption -->
-      <p class="star-nav__hint">Click a star to jump to a project, or scroll down to explore</p>
-
-      <!-- Star Project Links -->
-      <div class="star-nav">
-        <!-- Star 1: Enceladus -->
-        <a href="#enceladus" class="star-item">
-          <svg viewBox="0 0 24 24" class="star-item__svg" aria-hidden="true">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <span class="star-item__label">Enceladus</span>
-        </a>
-
-        <!-- Star 2: Python Lofi -->
-        <a href="#lofi" class="star-item">
-          <svg viewBox="0 0 24 24" class="star-item__svg" aria-hidden="true">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <span class="star-item__label">Python Lofi</span>
-        </a>
-
-        <!-- Star 3: Turtle Timer -->
-        <a href="#timer" class="star-item">
-          <svg viewBox="0 0 24 24" class="star-item__svg" aria-hidden="true">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          <span class="star-item__label">Turtle Timer</span>
-        </a>
-      </div>
+      <!-- Star 3: Turtle (Turtle Timer) -->
+      <a href="#timer" class="star-item">
+        <svg viewBox="0 0 64 64" class="star-item__svg" aria-hidden="true">
+          <path d="M 22 20 Q 14 20 14 28 C 14 42 22 48 32 48 C 42 48 50 42 50 28 Q 50 20 42 20 Z"/>
+          <path d="M 32 18 Q 32 10 32 8 Q 28 6 32 6 Q 36 6 32 8"/>
+          <path d="M 18 24 Q 10 20 12 16"/>
+          <path d="M 46 24 Q 54 20 52 16"/>
+          <path d="M 18 40 Q 10 44 12 48"/>
+          <path d="M 46 40 Q 54 44 52 48"/>
+          <path d="M 32 48 L 32 54"/>
+          <!-- Hashtag mark on shell -->
+          <path d="M 27 28 L 37 28 M 27 36 L 37 36 M 30 25 L 30 39 M 34 25 L 34 39"/>
+        </svg>
+        <span class="star-item__label">turtle timer</span>
+      </a>
     </div>
+
   </section>
     
  
@@ -88,7 +84,7 @@
     <!-- ---------------- PROJECT 1 ---------------- -->
     <section class="project" id="enceladus">
       <div class="project__meta">
-        <h3>Enceladus</h3>
+        <h3>enceladus</h3>
         <p class="project__meta-line">Digital, Projection <span>|</span> 2026 <span>|</span> Group <span>|</span> MAT 111FS — Nefeli Manoudaki</p>
       </div>
 
@@ -103,7 +99,6 @@
         <video src="media/oh_enceladus_04.mp4" controls muted loop playsinline></video>
         <figcaption>Video demonstration</figcaption>
       </figure>
-
 
       <div class="project__gallery">
         <figure>
@@ -141,7 +136,7 @@
     <!-- ---------------- PROJECT 2 ---------------- -->
     <section class="project" id="lofi">
       <div class="project__meta">
-        <h3>Python Lofi</h3>
+        <h3>python lofi</h3>
         <p class="project__meta-line">Digital Audio <span>|</span> 2026 <span>|</span> Independent <span>|</span> MAT 111MC — Ryan Millett</p>
       </div>
 
@@ -157,7 +152,6 @@
         <p class="notebook-embed__status">Loading notebook…</p>
       </div>
 
-      <!-- Description Below Notebook -->
       <div class="project__body">
         <p>
           The musical techniques were inspired by concepts learned in MAT 111MC, such as rhythm
@@ -174,7 +168,7 @@
     <!-- ---------------- PROJECT 3 ---------------- -->
     <section class="project" id="timer">
       <div class="project__meta">
-        <h3>Turtle Timer</h3>
+        <h3>turtle timer</h3>
         <p class="project__meta-line">Physical Hardware <span>|</span> 2025 <span>|</span> Independent <span>|</span> ME 10 — Geoff Tsai</p>
       </div>
 
@@ -185,7 +179,6 @@
         </p>
       </div>
 
-      
       <figure class="project__media">
         <video src="media/oh_timer_05.mp4" controls muted loop playsinline></video>
         <figcaption>Video demonstration of timer</figcaption>
@@ -213,14 +206,13 @@
           timer was built with an Arduino Nano, pushbuttons, wires, LEGOs, and a custom
           3D-printed part.
         </p>
-        
       </div>
     </section>
 
   </main>
 
   <footer>
-    <p>Dagyo Oh — UC Santa Barbara — 2026</p>
+    <p>dagyo oh — uc santa barbara — 2026</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/ipynb2html@0.4.0-rc.1/dist/ipynb2html-full.min.js" crossorigin="anonymous"></script>
@@ -248,7 +240,5 @@
     })();
   </script>
 
-
-  
 </body>
 </html>
