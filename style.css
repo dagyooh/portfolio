@@ -491,3 +491,74 @@ footer {
   transform: translateY(-2px);
   filter: drop-shadow(0 2px 8px rgba(36, 81, 196, 0.25));
 }
+
+
+/* ---------- Title & Doodle Adjustments ---------- */
+
+.hero__name {
+  margin: 0;
+  font-size: clamp(3.5rem, 12vw, 7.5rem);
+  line-height: 1;
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Tighten spacing across the title elements */
+  gap: 0.02em; 
+}
+
+.hero__doodle-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 -0.05em; /* Negative margin pulls 'dagyo', doodle, and 'h' closer together */
+  line-height: 0;
+}
+
+.hero__doodle-img {
+  width: clamp(3.2rem, 10vw, 6.5rem);
+  height: clamp(3.2rem, 10vw, 6.5rem);
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.hero__doodle-link:hover .hero__doodle-img {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+/* ---------- Icon Sizing & Alignment ---------- */
+
+.star-nav {
+  display: flex;
+  align-items: flex-start; /* Keeps item labels horizontally aligned */
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.star-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--ink);
+  width: 80px; /* Fixed width container to keep alignment uniform */
+  transition: transform 0.25s ease;
+}
+
+.star-item__img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain; /* Ensures all doodle images scale uniformly into the 64x64 square */
+  display: block;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.star-item:hover .star-item__img {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 2px 8px rgba(36, 81, 196, 0.25));
+}
