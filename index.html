@@ -279,6 +279,34 @@
     });
   })();
 </script>
+
+<script>
+  (function() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    let currentTheme = storedTheme || (prefersDark ? 'dark' : 'light');
+    
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (toggleBtn) {
+        toggleBtn.textContent = theme === 'dark' ? 'light' : 'dark';
+      }
+      localStorage.setItem('theme', theme);
+    }
+    
+    applyTheme(currentTheme);
+    
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', function() {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(currentTheme);
+      });
+    }
+  })();
+</script>
+
   
 </body>
 </html>
