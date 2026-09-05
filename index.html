@@ -1,314 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>dagyo oh — portfolio</title>
-  <meta name="description" content="Dagyo Oh — Engineering Student at UC Santa Barbara. Interactive installations, physical computing, and generative media.">
+<!-- HERO STATEMENT -->
+<p class="hero__statement">
+  engineering student at UC Santa Barbara
+</p>
 
-  <link rel="stylesheet" href="style.css">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ipynb2html@0.4.0-rc.1/dist/notebook.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.3/build/styles/default.min.css" crossorigin="anonymous">
-</head>
-<body>
-
-  <div class="reg-marks" aria-hidden="true">
-    <span class="reg tl"></span><span class="reg-label" style="top:1.25rem;left:1.25rem;">a</span>
-    <span class="reg tr"></span><span class="reg-label" style="top:1.25rem;right:1.25rem;">4</span>
-    <span class="reg bl"></span><span class="reg-label" style="bottom:1.25rem;left:1.25rem;">b</span>
-    <span class="reg br"></span><span class="reg-label" style="bottom:1.25rem;right:1.25rem;">1</span>
+<!-- PROJECT 1 -->
+<section class="project" id="enceladus">
+  <div class="project__meta">
+    <h3>enceladus</h3>
+    <p class="project__meta-line">digital, projection <span>|</span> 2026 <span>|</span> group <span>|</span> MAT 111FS — Nefeli Manoudaki</p>
   </div>
 
-  <header class="site-header">
-    <a href="#top" class="site-header__name">dagyo oh</a>
-    <nav class="site-header__nav">
-      <a href="#projects">projects</a>
-      <a href="about.html">about</a>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">dark</button>
-    </nav>
-  </header>
-
-  <!-- Hero / Cover Section -->
-  <section id="top" class="hero">
-
-    <!-- Title with Doodle replacing 'o' in 'oh' -->
-    <h1 class="hero__name">
-      dagyo <a href="about.html" class="hero__doodle-link" title="about dagyo">
-        <img src="media/doodle_face.png" alt="Dagyo portrait doodle" class="hero__doodle-img">
-      </a>h
-    </h1>
-
-    <p class="hero__statement">
-      engineering student at UC Santa Barbara
+  <div class="project__intro">
+    <p>
+      a projection of the lunar surface of one of Saturn's moons, Enceladus, that a viewer explores
+      by moving their hand over a sensor.
     </p>
-
-    <p class="hero__instruction">
-      click to go to a project, or scroll to explore
-    </p>
-
-    <!-- Project Icon Navigation -->
-    <div class="star-nav">
-      <a href="#enceladus" class="star-item">
-        <img src="media/icon_enceladus.png" alt="Enceladus icon" class="star-item__img">
-        <span class="star-item__label">enceladus</span>
-      </a>
-
-      <a href="#lofi" class="star-item">
-        <img src="media/icon_lofi.png" alt="Python Lofi icon" class="star-item__img">
-        <span class="star-item__label">python lofi</span>
-      </a>
-
-      <a href="#timer" class="star-item">
-        <img src="media/icon_timer.png" alt="Turtle Timer icon" class="star-item__img">
-        <span class="star-item__label">turtle timer</span>
-      </a>
-    </div>
-
-  </section>
-    
-  <main id="projects">
-
-    <!-- PROJECT 1 -->
-    <section class="project" id="enceladus">
-      <div class="project__meta">
-        <h3>enceladus</h3>
-        <p class="project__meta-line">digital, projection <span>|</span> 2026 <span>|</span> group <span>|</span> mat 111fs — nefeli manoudaki</p>
-      </div>
-
-      <div class="project__intro">
-        <p>
-          a projection of the lunar surface of one of saturn's moons, enceladus, that a viewer explores
-          by moving their hand over a sensor.
-        </p>
-      </div>
-
-      <figure class="project__media">
-        <video src="media/oh_enceladus_04.mp4" controls muted loop playsinline></video>
-        <figcaption>video demonstration</figcaption>
-      </figure>
-
-      <div class="project__gallery">
-        <figure>
-          <img src="media/oh_enceladus_05.jpg" alt="The projected Enceladus surface wrapping two walls of the installation.">
-          <figcaption>installation view</figcaption>
-        </figure>
-        <figure>
-          <img src="media/oh_enceladus_06.JPG" alt="The hand sensor surrounded by 3D-printed ice structures.">
-          <figcaption>sensor + 3D-printed ice structures</figcaption>
-        </figure>
-      </div>
-
-      <div class="project__body">
-        <p>
-          enceladus is an immersive experience that allows a viewer to interact with it by controlling
-          movement across a preset path across the lunar surface. the movement is controlled via
-          hand movement across a sensor. the projection surrounds the viewer along two walls,
-          giving it a grand scale. additional 3D-printed ice structures provided decor around the
-          hand sensor.
-        </p>
-        <p>
-          we used a live projection via TouchDesigner. motion was detected by a Leap Motion
-          Controller by putting one's hands above the sensor and moving left or right. preset
-          locations were set through TouchDesigner's camera viewport, and the sequence of
-          presets triggered when movement was detected. the landscape itself was created in Blender.
-        </p>
-        <p>
-          this was a group project done with four other people: Bruno Klena, Rose Li, Taj Draper,
-          and Ajoonee Sidhu. i 3D printed the ice structures, and worked on integrating the
-          sensor data to the landscape in TouchDesigner with Rose Li.
-        </p>
-      </div>
-    </section>
-
-    <!-- PROJECT 2 -->
-    <section class="project" id="lofi">
-      <div class="project__meta">
-        <h3>python lofi</h3>
-        <p class="project__meta-line">digital audio <span>|</span> 2026 <span>|</span> independent <span>|</span> mat 111mc — ryan millett</p>
-      </div>
-
-      <div class="project__intro">
-        <p>
-          a ~1-minute lofi-style track written entirely in Python, using rhythm and tone
-          structures from class rather than a DAW.
-        </p>
-      </div>
-
-      <div id="lofi-notebook" class="notebook-embed">
-        <p class="notebook-embed__status">loading notebook…</p>
-      </div>
-
-      <div class="project__body">
-        <p>
-          the musical techniques were inspired by concepts learned in MAT 111MC, such as rhythm
-          trees and tone lattices. the Claude desktop app was used to aid in creating usable
-          functions and debugging code.
-        </p>
-      </div>
-
-      <p class="notebook-download">
-        <a href="media/oh_lofi_01.ipynb" download>download oh_lofi_01.ipynb</a>
-      </p>
-    </section>
-
-    <!-- PROJECT 3 -->
-    <section class="project" id="timer">
-      <div class="project__meta">
-        <h3>turtle timer</h3>
-        <p class="project__meta-line">physical hardware <span>|</span> 2025 <span>|</span> independent <span>|</span> me 10 — geoff tsai</p>
-      </div>
-
-      <div class="project__intro">
-        <p>
-          a timer system that automatically shuts off my turtles' heat lamp after 3, 4, or 6
-          hours, so no one in my family has to remember to do it.
-        </p>
-      </div>
-
-      <figure class="project__media">
-        <video src="media/oh_timer_05.mp4" controls muted loop playsinline></video>
-        <figcaption>video demonstration of timer</figcaption>
-      </figure>
-
-      <div class="project__gallery">
-        <figure>
-          <img src="media/oh_timer_02.jpg" alt="Breadboard prototype with Arduino Nano and servo.">
-          <figcaption>project setup</figcaption>
-        </figure>
-        <figure>
-          <img src="media/oh_timer_03.jpg" alt="Custom 3D-printed enclosure bracket for timer.">
-          <figcaption>custom 3D-printed part</figcaption>
-        </figure>
-      </div>
-
-      <div class="project__body">
-        <p>
-          i decided to build a timer since turning off the lamp had always been a hassle for my
-          family members; it was the most frequent chore in taking care of the turtles. the
-          project has four pushbuttons with time settings of 3, 4, and 6 hours, and a reset button.
-        </p>
-        <p>
-          when the timer finishes, a servo motor activates and turns off the lamp switch. the
-          timer was built with an Arduino Nano, pushbuttons, wires, LEGOs, and a custom
-          3D-printed part.
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>dagyo oh — uc santa barbara — 2026</p>
-  </footer>
-
-  <!-- Lightbox Modal -->
-  <div id="image-modal" class="image-modal" aria-hidden="true">
-    <button id="modal-close" class="image-modal__close" aria-label="Close image modal">&times;</button>
-    <img id="modal-img" class="image-modal__content" src="" alt="Enlarged view">
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/ipynb2html@0.4.0-rc.1/dist/ipynb2html-full.min.js" crossorigin="anonymous"></script>
+  <figure class="project__media">
+    <video src="media/oh_enceladus_04.mp4" controls muted loop playsinline></video>
+    <figcaption>video demonstration</figcaption>
+  </figure>
 
-  <!-- Notebook Handler -->
-  <script>
-    (function () {
-      var target = document.getElementById('lofi-notebook');
+  <div class="project__gallery">
+    <figure>
+      <img src="media/oh_enceladus_05.jpg" alt="The projected Enceladus surface wrapping two walls of the installation.">
+      <figcaption>installation view</figcaption>
+    </figure>
+    <figure>
+      <img src="media/oh_enceladus_06.JPG" alt="The hand sensor surrounded by 3D-printed ice structures.">
+      <figcaption>sensor + 3D-printed ice structures</figcaption>
+    </figure>
+  </div>
 
-      fetch('media/oh_lofi_01.ipynb')
-        .then(function (res) {
-          if (!res.ok) throw new Error('not found');
-          return res.json();
-        })
-        .then(function (notebook) {
-          target.innerHTML = '';
-          target.appendChild(ipynb2html.render(notebook));
-        })
-        .catch(function () {
-          target.innerHTML =
-            '<p class="notebook-embed__status">' +
-            'notebook preview needs this site to be served over http(s) rather than opened ' +
-            'directly as a file — it will render once hosted (e.g. github pages) or run from a ' +
-            'local server. until then, use the download link below.' +
-            '</p>';
-        });
-    })();
-  </script>
+  <div class="project__body">
+    <p>
+      Enceladus is an immersive experience that allows a viewer to interact with it by controlling
+      movement across a preset path across the lunar surface. the movement is controlled via
+      hand movement across a sensor. the projection surrounds the viewer along two walls,
+      giving it a grand scale. additional 3D-printed ice structures provided decor around the
+      hand sensor.
+    </p>
+    <p>
+      we used a live projection via TouchDesigner. motion was detected by a Leap Motion
+      Controller by putting one's hands above the sensor and moving left or right. preset
+      locations were set through TouchDesigner's camera viewport, and the sequence of
+      presets triggered when movement was detected. the landscape itself was created in Blender.
+    </p>
+    <p>
+      this was a group project done with four other people: Bruno Klena, Rose Li, Taj Draper,
+      and Ajoonee Sidhu. i 3D printed the ice structures, and worked on integrating the
+      sensor data to the landscape in TouchDesigner with Rose Li.
+    </p>
+  </div>
+</section>
 
-  <!-- Lightbox Pop-out Handler -->
-  <script>
-    (function() {
-      const modal = document.getElementById('image-modal');
-      const modalImg = document.getElementById('modal-img');
-      const closeBtn = document.getElementById('modal-close');
+<!-- PROJECT 2 -->
+<section class="project" id="lofi">
+  <div class="project__meta">
+    <h3>python lofi</h3>
+    <p class="project__meta-line">digital audio <span>|</span> 2026 <span>|</span> independent <span>|</span> MAT 111MC — Ryan Millett</p>
+  </div>
 
-      if (!modal || !modalImg) return;
+  <div class="project__intro">
+    <p>
+      a ~1-minute lofi-style track written entirely in Python, using rhythm and tone
+      structures from class rather than a DAW.
+    </p>
+  </div>
 
-      const popoutImages = document.querySelectorAll('.project__media img, .project__gallery img, .about__photo');
+  <div id="lofi-notebook" class="notebook-embed">
+    <p class="notebook-embed__status">loading notebook…</p>
+  </div>
 
-      popoutImages.forEach(function(img) {
-        img.addEventListener('click', function(e) {
-          e.preventDefault();
-          modalImg.src = this.src;
-          modalImg.alt = this.alt || 'Enlarged photo';
-          modal.classList.add('is-active');
-          modal.setAttribute('aria-hidden', 'false');
-        });
-      });
+  <div class="project__body">
+    <p>
+      the musical techniques were inspired by concepts learned in MAT 111MC, such as rhythm
+      trees and tone lattices. the Claude desktop app was used to aid in creating usable
+      functions and debugging code.
+    </p>
+  </div>
 
-      function closeModal() {
-        modal.classList.remove('is-active');
-        modal.setAttribute('aria-hidden', 'true');
-        modalImg.src = '';
-      }
+  <p class="notebook-download">
+    <a href="media/oh_lofi_01.ipynb" download>download oh_lofi_01.ipynb</a>
+  </p>
+</section>
 
-      modal.addEventListener('click', function(e) {
-        if (e.target !== modalImg) {
-          closeModal();
-        }
-      });
+<!-- PROJECT 3 -->
+<section class="project" id="timer">
+  <div class="project__meta">
+    <h3>turtle timer</h3>
+    <p class="project__meta-line">physical hardware <span>|</span> 2025 <span>|</span> independent <span>|</span> ME 10 — Geoff Tsai</p>
+  </div>
 
-      if (closeBtn) {
-        closeBtn.addEventListener('click', closeModal);
-      }
+  <div class="project__intro">
+    <p>
+      a timer system that automatically shuts off my turtles' heat lamp after 3, 4, or 6
+      hours, so no one in my family has to remember to do it.
+    </p>
+  </div>
 
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('is-active')) {
-          closeModal();
-        }
-      });
-    })();
-  </script>
+  <figure class="project__media">
+    <video src="media/oh_timer_05.mp4" controls muted loop playsinline></video>
+    <figcaption>video demonstration of timer</figcaption>
+  </figure>
 
-  <!-- Dark Mode Theme Handler -->
-  <script>
-    (function() {
-      const toggleBtn = document.getElementById('theme-toggle');
-      const storedTheme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      
-      let currentTheme = storedTheme || (prefersDark ? 'dark' : 'light');
-      
-      function applyTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        if (toggleBtn) {
-          toggleBtn.textContent = theme === 'dark' ? 'light' : 'dark';
-        }
-        localStorage.setItem('theme', theme);
-      }
-      
-      applyTheme(currentTheme);
-      
-      if (toggleBtn) {
-        toggleBtn.addEventListener('click', function() {
-          currentTheme = currentTheme === 'dark' ? 'dark' : 'light';
-          currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-          applyTheme(currentTheme);
-        });
-      }
-    })();
-  </script>
-  
-</body>
-</html>
+  <div class="project__gallery">
+    <figure>
+      <img src="media/oh_timer_02.jpg" alt="Breadboard prototype with Arduino Nano and servo.">
+      <figcaption>project setup</figcaption>
+    </figure>
+    <figure>
+      <img src="media/oh_timer_03.jpg" alt="Custom 3D-printed enclosure bracket for timer.">
+      <figcaption>custom 3D-printed part</figcaption>
+    </figure>
+  </div>
+
+  <div class="project__body">
+    <p>
+      i decided to build a timer since turning off the lamp had always been a hassle for my
+      family members; it was the most frequent chore in taking care of the turtles. the
+      project has four pushbuttons with time settings of 3, 4, and 6 hours, and a reset button.
+    </p>
+    <p>
+      when the timer finishes, a servo motor activates and turns off the lamp switch. the
+      timer was built with an Arduino Nano, pushbuttons, wires, LEGOs, and a custom
+      3D-printed part.
+    </p>
+  </div>
+</section>
