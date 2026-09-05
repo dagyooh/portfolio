@@ -15,9 +15,9 @@
 <body>
 
   <div class="reg-marks" aria-hidden="true">
-    <span class="reg tl"></span><span class="reg-label" style="top:1.25rem;left:1.25rem;">A</span>
+    <span class="reg tl"></span><span class="reg-label" style="top:1.25rem;left:1.25rem;">a</span>
     <span class="reg tr"></span><span class="reg-label" style="top:1.25rem;right:1.25rem;">4</span>
-    <span class="reg bl"></span><span class="reg-label" style="bottom:1.25rem;left:1.25rem;">B</span>
+    <span class="reg bl"></span><span class="reg-label" style="bottom:1.25rem;left:1.25rem;">b</span>
     <span class="reg br"></span><span class="reg-label" style="bottom:1.25rem;right:1.25rem;">1</span>
   </div>
 
@@ -29,48 +29,87 @@
     </nav>
   </header>
 
-  <!-- Cover Landing Section -->
+  <!-- Hero / Cover Section -->
   <section id="top" class="hero">
 
-    <h1 class="hero__name">dagyo oh</h1>
+    <!-- Title with Doodle Replacing 'o' in 'oh' -->
+    <h1 class="hero__name">
+      dagyo <a href="about.html" class="hero__doodle-link" title="about dagyo">
+        <svg class="hero__doodle-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Face outline -->
+          <path d="M 28 55 C 26 72, 38 84, 50 84 C 62 84, 74 72, 72 55" />
+          <!-- Hair bang strands & sides -->
+          <path d="M 32 52 C 28 38, 38 32, 42 50" />
+          <path d="M 42 50 C 44 36, 48 34, 50 50" />
+          <path d="M 50 50 C 52 36, 56 34, 58 50" />
+          <path d="M 58 50 C 62 38, 72 38, 68 52" />
+          <path d="M 32 50 C 24 40, 36 28, 48 32" />
+          <path d="M 68 50 C 76 40, 64 28, 52 32" />
+          <path d="M 48 28 C 47 20, 50 14, 52 10 C 52 16, 54 22, 50 28" />
+          <!-- Hair flips -->
+          <path d="M 28 58 C 22 62, 20 70, 24 74 C 28 72, 28 66, 32 64" />
+          <path d="M 72 58 C 78 62, 80 70, 76 74 C 72 72, 72 66, 68 64" />
+          <!-- Glasses -->
+          <circle cx="40" cy="56" r="8" />
+          <circle cx="60" cy="56" r="8" />
+          <line x1="48" y1="56" x2="52" y2="56" />
+          <line x1="32" y1="56" x2="28" y2="54" />
+          <line x1="68" y1="56" x2="72" y2="54" />
+          <!-- Eyes inside glasses -->
+          <circle cx="42" cy="56" r="2.5" fill="currentColor" />
+          <circle cx="62" cy="56" r="2.5" fill="currentColor" />
+          <!-- Nose & Smile -->
+          <circle cx="50" cy="63" r="1.5" fill="currentColor" />
+          <path d="M 42 70 Q 50 75 58 70" />
+          <!-- Star accessory -->
+          <polygon points="24,38 26,42 30,42 27,45 28,49 24,46 20,49 21,45 18,42 22,42" fill="currentColor" stroke="none" />
+        </svg>
+      </a>h
+    </h1>
 
     <p class="hero__statement">
       engineering student at uc santa barbara
     </p>
 
-    <!-- Custom Drawn Project Icons -->
+    <!-- Instruction Subtitle -->
+    <p class="hero__instruction">
+      click to go to a project, or scroll to explore
+    </p>
+
+    <!-- Project Icon Navigation -->
     <div class="star-nav">
-      <!-- Star 1: Saturn (Enceladus) -->
+      <!-- Icon 1: Saturn (Enceladus) -->
       <a href="#enceladus" class="star-item">
         <svg viewBox="0 0 64 64" class="star-item__svg" aria-hidden="true">
-          <ellipse cx="32" cy="32" rx="14" ry="14"/>
-          <path d="M 12,38 C 10,28 20,20 38,20 C 52,20 56,28 50,34 C 44,40 22,46 12,38 Z"/>
+          <ellipse cx="32" cy="32" rx="12" ry="12" />
+          <path d="M 10 36 C 8 24, 24 16, 42 18 C 54 20, 58 28, 52 34 C 42 42, 20 44, 10 36 Z" />
         </svg>
         <span class="star-item__label">enceladus</span>
       </a>
 
-      <!-- Star 2: Music Note (Python Lofi) -->
+      <!-- Icon 2: Music Notes (Python Lofi) -->
       <a href="#lofi" class="star-item">
         <svg viewBox="0 0 64 64" class="star-item__svg" aria-hidden="true">
-          <circle cx="20" cy="46" r="5" fill="black"/>
-          <circle cx="44" cy="38" r="5" fill="black"/>
-          <path d="M 25 46 L 25 18 L 49 10 L 49 38 M 25 26 L 49 18"/>
+          <circle cx="20" cy="44" r="5" fill="currentColor" />
+          <circle cx="44" cy="36" r="5" fill="currentColor" />
+          <path d="M 25 44 L 25 16 L 49 10 L 49 36" />
+          <path d="M 25 24 L 49 18" />
         </svg>
         <span class="star-item__label">python lofi</span>
       </a>
 
-      <!-- Star 3: Turtle (Turtle Timer) -->
+      <!-- Icon 3: Turtle (Turtle Timer) -->
       <a href="#timer" class="star-item">
         <svg viewBox="0 0 64 64" class="star-item__svg" aria-hidden="true">
-          <path d="M 22 20 Q 14 20 14 28 C 14 42 22 48 32 48 C 42 48 50 42 50 28 Q 50 20 42 20 Z"/>
-          <path d="M 32 18 Q 32 10 32 8 Q 28 6 32 6 Q 36 6 32 8"/>
-          <path d="M 18 24 Q 10 20 12 16"/>
-          <path d="M 46 24 Q 54 20 52 16"/>
-          <path d="M 18 40 Q 10 44 12 48"/>
-          <path d="M 46 40 Q 54 44 52 48"/>
-          <path d="M 32 48 L 32 54"/>
-          <!-- Hashtag mark on shell -->
-          <path d="M 27 28 L 37 28 M 27 36 L 37 36 M 30 25 L 30 39 M 34 25 L 34 39"/>
+          <circle cx="32" cy="32" r="14" />
+          <!-- Head with # symbol -->
+          <circle cx="18" cy="18" r="6" />
+          <path d="M 16 15 L 16 21 M 20 15 L 20 21 M 14 17 L 22 17 M 14 19 L 22 19" stroke-width="1.5" />
+          <!-- Flippers -->
+          <path d="M 20 24 Q 12 20 10 26" />
+          <path d="M 44 24 Q 52 20 54 26" />
+          <path d="M 20 40 Q 12 44 10 38" />
+          <path d="M 44 40 Q 52 44 54 38" />
         </svg>
         <span class="star-item__label">turtle timer</span>
       </a>
@@ -78,133 +117,131 @@
 
   </section>
     
- 
   <main id="projects">
 
-    <!-- ---------------- PROJECT 1 ---------------- -->
+    <!-- PROJECT 1 -->
     <section class="project" id="enceladus">
       <div class="project__meta">
         <h3>enceladus</h3>
-        <p class="project__meta-line">Digital, Projection <span>|</span> 2026 <span>|</span> Group <span>|</span> MAT 111FS — Nefeli Manoudaki</p>
+        <p class="project__meta-line">digital, projection <span>|</span> 2026 <span>|</span> group <span>|</span> mat 111fs — nefeli manoudaki</p>
       </div>
 
       <div class="project__intro">
         <p>
-          A projection of the lunar surface of Saturn's moon, Enceladus, that a viewer explores
-          by moving their hand over a sensor — surrounded by 3D-printed ice structures.
+          a projection of the lunar surface of saturn's moon, enceladus, that a viewer explores
+          by moving their hand over a sensor — surrounded by 3d-printed ice structures.
         </p>
       </div>
 
       <figure class="project__media">
         <video src="media/oh_enceladus_04.mp4" controls muted loop playsinline></video>
-        <figcaption>Video demonstration</figcaption>
+        <figcaption>video demonstration</figcaption>
       </figure>
 
       <div class="project__gallery">
         <figure>
-          <img src="media/oh_enceladus_05.jpg" alt="The projected Enceladus surface wrapping two walls of the installation, with the ice-structure pedestal in the foreground.">
-          <figcaption>Installation view</figcaption>
+          <img src="media/oh_enceladus_05.jpg" alt="The projected Enceladus surface wrapping two walls of the installation.">
+          <figcaption>installation view</figcaption>
         </figure>
         <figure>
-          <img src="media/oh_enceladus_06.JPG" alt="The hand sensor surrounded by the 3D-printed ice structures.">
-          <figcaption>Sensor + 3D-printed ice structures</figcaption>
+          <img src="media/oh_enceladus_06.JPG" alt="The hand sensor surrounded by 3D-printed ice structures.">
+          <figcaption>sensor + 3d-printed ice structures</figcaption>
         </figure>
       </div>
 
       <div class="project__body">
         <p>
-          Enceladus is an immersive experience that allows a viewer to interact with it by controlling
-          movement across a preset path across the lunar surface. The movement is controlled via
-          hand movement across a sensor. The projection surrounds the viewer along two walls,
-          giving it a grand scale. Additional 3D-printed ice structures provided decor around the
+          enceladus is an immersive experience that allows a viewer to interact with it by controlling
+          movement across a preset path across the lunar surface. the movement is controlled via
+          hand movement across a sensor. the projection surrounds the viewer along two walls,
+          giving it a grand scale. additional 3d-printed ice structures provided decor around the
           hand sensor.
         </p>
         <p>
-          We used a live projection via TouchDesigner. Motion was detected by a Leap Motion
-          Controller by putting one's hands above the sensor and moving left or right. Preset
-          locations were set through TouchDesigner's camera viewport, and the sequence of
-          presets triggered when movement was detected. The landscape itself was created in Blender.
+          we used a live projection via touchdesigner. motion was detected by a leap motion
+          controller by putting one's hands above the sensor and moving left or right. preset
+          locations were set through touchdesigner's camera viewport, and the sequence of
+          presets triggered when movement was detected. the landscape itself was created in blender.
         </p>
         <p>
-          This was a group project done with four other people: Bruno Klena, Rose Li, Taj Draper,
-          and Ajoonee Sidhu. I 3D printed the ice structures, and worked on integrating the
-          sensor data to the landscape in TouchDesigner with Rose Li.
+          this was a group project done with four other people: bruno klena, rose li, taj draper,
+          and ajoonee sidhu. i 3d printed the ice structures, and worked on integrating the
+          sensor data to the landscape in touchdesigner with rose li.
         </p>
       </div>
     </section>
 
-    <!-- ---------------- PROJECT 2 ---------------- -->
+    <!-- PROJECT 2 -->
     <section class="project" id="lofi">
       <div class="project__meta">
         <h3>python lofi</h3>
-        <p class="project__meta-line">Digital Audio <span>|</span> 2026 <span>|</span> Independent <span>|</span> MAT 111MC — Ryan Millett</p>
+        <p class="project__meta-line">digital audio <span>|</span> 2026 <span>|</span> independent <span>|</span> mat 111mc — ryan millett</p>
       </div>
 
       <div class="project__intro">
         <p>
-          A ~1-minute lofi-style track written entirely in Python, using rhythm and tone
-          structures from class rather than a DAW.
+          a ~1-minute lofi-style track written entirely in python, using rhythm and tone
+          structures from class rather than a daw.
         </p>
       </div>
 
-      <!-- Jupyter Notebook Viewport -->
       <div id="lofi-notebook" class="notebook-embed">
-        <p class="notebook-embed__status">Loading notebook…</p>
+        <p class="notebook-embed__status">loading notebook…</p>
       </div>
 
       <div class="project__body">
         <p>
-          The musical techniques were inspired by concepts learned in MAT 111MC, such as rhythm
-          trees and tone lattices. The Claude desktop app was used to aid in creating usable
+          the musical techniques were inspired by concepts learned in mat 111mc, such as rhythm
+          trees and tone lattices. the claude desktop app was used to aid in creating usable
           functions and debugging code.
         </p>
       </div>
 
       <p class="notebook-download">
-        <a href="media/oh_lofi_01.ipynb" download>Download oh_lofi_01.ipynb</a>
+        <a href="media/oh_lofi_01.ipynb" download>download oh_lofi_01.ipynb</a>
       </p>
     </section>
 
-    <!-- ---------------- PROJECT 3 ---------------- -->
+    <!-- PROJECT 3 -->
     <section class="project" id="timer">
       <div class="project__meta">
         <h3>turtle timer</h3>
-        <p class="project__meta-line">Physical Hardware <span>|</span> 2025 <span>|</span> Independent <span>|</span> ME 10 — Geoff Tsai</p>
+        <p class="project__meta-line">physical hardware <span>|</span> 2025 <span>|</span> independent <span>|</span> me 10 — geoff tsai</p>
       </div>
 
       <div class="project__intro">
         <p>
-          A timer system that automatically shuts off my turtles' heat lamp after 3, 4, or 6
+          a timer system that automatically shuts off my turtles' heat lamp after 3, 4, or 6
           hours, so no one in my family has to remember to do it.
         </p>
       </div>
 
       <figure class="project__media">
         <video src="media/oh_timer_05.mp4" controls muted loop playsinline></video>
-        <figcaption>Video demonstration of timer</figcaption>
+        <figcaption>video demonstration of timer</figcaption>
       </figure>
 
       <div class="project__gallery">
         <figure>
-          <img src="media/oh_timer_02.jpg" alt="The breadboard prototype with Arduino Nano, pushbuttons, and servo mounted on the wall.">
-          <figcaption>Project setup</figcaption>
+          <img src="media/oh_timer_02.jpg" alt="Breadboard prototype with Arduino Nano and servo.">
+          <figcaption>project setup</figcaption>
         </figure>
         <figure>
-          <img src="media/oh_timer_03.jpg" alt="The custom 3D-printed yellow enclosure bracket for the timer.">
-          <figcaption>Custom 3D-printed part</figcaption>
+          <img src="media/oh_timer_03.jpg" alt="Custom 3D-printed enclosure bracket for timer.">
+          <figcaption>custom 3d-printed part</figcaption>
         </figure>
       </div>
 
       <div class="project__body">
         <p>
-          I decided to build a timer since turning off the lamp had always been a hassle for my
-          family members — it was the most frequent chore in taking care of the turtles. The
+          i decided to build a timer since turning off the lamp had always been a hassle for my
+          family members — it was the most frequent chore in taking care of the turtles. the
           project has four pushbuttons with time settings of 3, 4, and 6 hours, and a reset button.
         </p>
         <p>
-          When the timer finishes, a servo motor activates and turns off the lamp switch. The
-          timer was built with an Arduino Nano, pushbuttons, wires, LEGOs, and a custom
-          3D-printed part.
+          when the timer finishes, a servo motor activates and turns off the lamp switch. the
+          timer was built with an arduino nano, pushbuttons, wires, legos, and a custom
+          3d-printed part.
         </p>
       </div>
     </section>
@@ -232,9 +269,9 @@
         .catch(function () {
           target.innerHTML =
             '<p class="notebook-embed__status">' +
-            'Notebook preview needs this site to be served over http(s) rather than opened ' +
-            'directly as a file — it will render once hosted (e.g. GitHub Pages) or run from a ' +
-            'local server. Until then, use the download link below.' +
+            'notebook preview needs this site to be served over http(s) rather than opened ' +
+            'directly as a file — it will render once hosted (e.g. github pages) or run from a ' +
+            'local server. until then, use the download link below.' +
             '</p>';
         });
     })();
