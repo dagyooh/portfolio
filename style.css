@@ -642,3 +642,49 @@ footer {
 [data-theme="dark"] .notebook-embed .jp-OutputArea-output img {
   filter: invert(0.9) hue-rotate(180deg);
 }
+
+/* ---------- Lowercase Typography Enforcement ---------- */
+
+.project__intro p,
+.project__body p,
+.about__body p {
+  text-transform: lowercase;
+}
+
+/* ---------- Notebook Embed Dark Mode ---------- */
+
+[data-theme="dark"] .notebook-embed {
+  background: #121210;
+  color: #f0f0ec;
+  border-color: #2e2e2a;
+}
+
+[data-theme="dark"] .notebook-embed .jp-Cell,
+[data-theme="dark"] .notebook-embed .jp-Notebook,
+[data-theme="dark"] .notebook-embed .jp-Cell-inputWrapper,
+[data-theme="dark"] .notebook-embed .jp-Cell-outputWrapper {
+  background-color: #121210 !important;
+  color: #f0f0ec !important;
+}
+
+[data-theme="dark"] .notebook-embed pre,
+[data-theme="dark"] .notebook-embed code,
+[data-theme="dark"] .notebook-embed .jp-CodeCell .jp-Cell-inputArea {
+  background-color: #1a1a17 !important;
+  color: #e2e2dc !important;
+  border-color: #2e2e2a !important;
+}
+
+[data-theme="dark"] .notebook-embed .katex,
+[data-theme="dark"] .notebook-embed .katex-display {
+  color: #f0f0ec !important;
+}
+
+[data-theme="dark"] .notebook-embed .jp-RenderedHTMLCommon {
+  color: #f0f0ec !important;
+}
+
+[data-theme="dark"] .notebook-embed .jp-RenderedImage img,
+[data-theme="dark"] .notebook-embed .jp-OutputArea-output img {
+  filter: invert(0.9) hue-rotate(180deg);
+}
