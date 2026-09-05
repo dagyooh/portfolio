@@ -232,7 +232,6 @@ img, video { max-width: 100%; display: block; }
   font-weight: 300;
   color: var(--ink);
   margin: 0.3;
-  text-transform: lowercase;
   letter-spacing: 0.01em;
 }
 
@@ -336,7 +335,6 @@ img, video { max-width: 100%; display: block; }
   font-size: 0.78rem;
   color: var(--muted);
   letter-spacing: 0.02em;
-  text-transform: lowercase;
 }
 
 .project__meta-line span { margin: 0 0.4em; color: var(--line); }
@@ -378,7 +376,6 @@ img, video { max-width: 100%; display: block; }
   background: var(--paper);
   border-top: 1px solid var(--line);
   letter-spacing: 0.01em;
-  text-transform: none;
 }
 
 .project__gallery {
@@ -413,7 +410,6 @@ img, video { max-width: 100%; display: block; }
   letter-spacing: 0em;
   line-height: 1.4;
   margin: 0 0 1.5rem;
-  text-transform: none;
 }
 
 .project__body p {
@@ -423,7 +419,6 @@ img, video { max-width: 100%; display: block; }
   font-size: 0.98rem;
   letter-spacing: 0.01em;
   line-height: 1.45;
-  text-transform: none;
 }
 
 .notebook-embed {
@@ -514,7 +509,6 @@ img, video { max-width: 100%; display: block; }
   margin-top: 0;
   margin-bottom: 1.5rem;
   text-align: left;
-  text-transform: none;
 }
 
 @media (max-width: 640px) {
@@ -642,4 +636,3 @@ footer {
 [data-theme="dark"] .notebook-embed .jp-OutputArea-output img {
   filter: invert(0.9) hue-rotate(180deg);
 }
-
