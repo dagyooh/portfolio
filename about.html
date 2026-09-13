@@ -33,13 +33,17 @@
 
     <div class="about__content-grid">
       <figure class="about__photo-container">
-        <img src="media/IMG_2974.JPG" alt="Dagyo Oh portrait" class="about__photo">
+        <img src="media/doh_headshot.JPG" alt="Dagyo Oh portrait" class="about__photo">
       </figure>
 
       <div class="about__body">
         <p>
-          Dagyo is a Mechanical Engineering student at UC Santa Barbara minoring in Media Arts and Design and Music.
+          Dagyo is a Mechanical Engineering student at UC Santa Barbara minoring in Media Arts and Design, and Music.
         </p>
+
+        <div class="about__contact">
+          <p class="about__contact-line">contact: <a href="mailto:dagyooh@ucsb.edu">dagyooh@ucsb.edu</a></p>
+        </div>
       </div>
     </div>
   </main>
@@ -54,7 +58,7 @@
     <img id="modal-img" class="image-modal__content" src="" alt="Enlarged view">
   </div>
 
-  <!-- Lightbox Pop-out Handler -->
+  <!-- Lightbox Pop-out Handler: click to zoom, click (or Esc) to close, arrow keys to browse -->
   <script>
     (function() {
       const modal = document.getElementById('image-modal');
@@ -63,13 +67,22 @@
 
       if (!modal || !modalImg) return;
 
-      const popoutImages = document.querySelectorAll('.project__media img, .project__gallery img, .about__photo');
+      const images = Array.from(document.querySelectorAll('.project__media img, .project__gallery img, .about__photo'));
+      let currentIndex = 0;
 
-      popoutImages.forEach(function(img) {
+      function showImage(index) {
+        if (images.length === 0) return;
+        currentIndex = (index + images.length) % images.length;
+        const img = images[currentIndex];
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged photo';
+      }
+
+      images.forEach(function(img, i) {
         img.addEventListener('click', function(e) {
           e.preventDefault();
-          modalImg.src = this.src;
-          modalImg.alt = this.alt || 'Enlarged photo';
+          currentIndex = i;
+          showImage(currentIndex);
           modal.classList.add('is-active');
           modal.setAttribute('aria-hidden', 'false');
         });
@@ -81,10 +94,9 @@
         modalImg.src = '';
       }
 
-      modal.addEventListener('click', function(e) {
-        if (e.target !== modalImg) {
-          closeModal();
-        }
+      // Clicking anywhere in the modal — including the zoomed-in photo itself — closes it
+      modal.addEventListener('click', function() {
+        closeModal();
       });
 
       if (closeBtn) {
@@ -92,8 +104,13 @@
       }
 
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+        if (!modal.classList.contains('is-active')) return;
+        if (e.key === 'Escape') {
           closeModal();
+        } else if (e.key === 'ArrowRight') {
+          showImage(currentIndex + 1);
+        } else if (e.key === 'ArrowLeft') {
+          showImage(currentIndex - 1);
         }
       });
     })();
