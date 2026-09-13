@@ -314,6 +314,15 @@ img, video { max-width: 100%; display: block; }
 
 /* ---------- Projects Detail Section ---------- */
 
+.img-top-align {
+  object-position: top !important;
+}
+
+.img-contain {
+  object-fit: contain !important;
+  background: var(--paper);
+}
+
 .project {
   padding: 4rem var(--edge);
   border-top: 1px solid var(--line);
@@ -521,6 +530,34 @@ img, video { max-width: 100%; display: block; }
     max-width: 260px;
   }
 }
+
+/* ---------- About Contact Section ---------- */
+
+.about__contact {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.about__contact-line {
+  font-family: var(--mono);
+  font-size: 1rem !important;
+  color: var(--muted);
+  margin: 0;
+  text-transform: lowercase;
+  letter-spacing: 0.01em;
+}
+
+.about__contact-line a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.about__contact-line a:hover {
+  text-decoration: underline;
+}
+
+
 
 /* ---------- Image Pop-Out Lightbox ---------- */
 
